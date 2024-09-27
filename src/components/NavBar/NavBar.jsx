@@ -18,7 +18,7 @@ const NavBar = ({ user, handleLogout }) => {
           </ul>
         :
           <ul>
-            <li>About Us</li>
+            <li><NavLink to="/AboutUs">About Us</NavLink></li>
             <li>Shop</li>
             <li>Services</li>
             <li>Blog</li>
