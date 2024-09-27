@@ -1,11 +1,18 @@
 .nav_container{
   display: flex;
-  justify-content: right;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site_Title{
+  font-size: 48px;
 }
 
 ul{
   display: flex;
+  justify-content: right;
   list-style: none;
+  width: 90vw;
 }
 
 li{
