@@ -8,7 +8,7 @@ const NavBar = ({ user, handleLogout }) => {
   return (
     <nav>
       <div className={styles.nav_container}>
-        <div className={styles.site_Title}>Cultivation Corner</div>
+        <div className={styles.site_Title}> <NavLink to="/">Cultivation Corner</NavLink></div>
           <ul>
             {/* <li>Welcome, {user.name}</li> */}
             {/* <li><NavLink to="/profiles">Profiles</NavLink></li>
