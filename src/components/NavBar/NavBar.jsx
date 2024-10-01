@@ -9,7 +9,7 @@ const NavBar = ({ user, handleLogout }) => {
     <nav>
       <div className={styles.nav_container}>
         <div className={styles.site_Title}>Cultivation Corner</div>
-           <ul>
+          <ul>
             {/* <li>Welcome, {user.name}</li> */}
             {/* <li><NavLink to="/profiles">Profiles</NavLink></li>
             <li><NavLink to="/auth/change-password">Change Password</NavLink></li>

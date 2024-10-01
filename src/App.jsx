@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
 import AboutUs from './pages/AboutUs/AboutUs'
+import Services from './pages/Services/Services'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -67,6 +68,10 @@ function App() {
         <Route
           path="/aboutUs"
           element={ <AboutUs user={user}/> }
+        />
+        <Route
+          path="/Services"
+          element={ <Services user={user}/> }
         />
       </Routes>
     </>
