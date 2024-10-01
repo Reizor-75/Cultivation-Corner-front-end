@@ -1,0 +1,13 @@
+.product_container{
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.product_image{
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+}
