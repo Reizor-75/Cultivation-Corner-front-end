@@ -44,7 +44,7 @@ const AboutUs = () => {
         <div className={styles.staff_container}>
           <h1>Meet the Staff</h1>
           { profiles.map(profile =>(
-            <MemberCard key={profile.id} content={profile}></MemberCard> 
+            <MemberCard key={profile._id} member={profile}></MemberCard> 
           ))}
         </div>
       </div>
