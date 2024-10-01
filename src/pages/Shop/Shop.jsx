@@ -4,11 +4,18 @@ import { useEffect, useState } from 'react'
 // css
 import styles from './Shop.module.css'
 
+// services
+import *as productService from '../../services/productService'
+
 const Shop = () => {
   const [products, setProducts] = useState()
-
-  useEffect(() => {
   
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const productData = await productService.getAllProducts()
+      setProducts(productData)
+    }
+    fetchProducts()
   }, [])
 
   return (
