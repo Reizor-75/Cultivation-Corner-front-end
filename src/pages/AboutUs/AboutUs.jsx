@@ -1,3 +1,6 @@
+// services
+import * as profileServices from '../../services/profileService'
+
 // css
 import styles from './AboutUs.module.css'
 
