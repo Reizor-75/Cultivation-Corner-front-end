@@ -1,6 +1,9 @@
 // css
 import styles from './AboutUs.module.css'
 
+//components
+import MemberCard from '../../components/MemberCard/MemberCard'
+
 const AboutUs = () => {
   return (
     <main>
@@ -20,7 +23,7 @@ const AboutUs = () => {
 
         <div className={styles.staff_container}>
           <h1>Meet the Staff</h1>
-  
+          <MemberCard></MemberCard>
         </div>
       </div>
     </main>
