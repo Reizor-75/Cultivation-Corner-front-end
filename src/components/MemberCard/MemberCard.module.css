@@ -1,0 +1,15 @@
+.staff_profile{
+  display: flex;
+  flex-direction: row;
+  height: 40vh;
+}
+
+.staff_mem_photo{
+  width: 30%;
+  /* background-color: aquamarine; */
+}
+
+.staff_mem_info{
+  width: 70%;
+  /* background-color: darkcyan; */
+}

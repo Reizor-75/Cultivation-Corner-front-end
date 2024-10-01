@@ -20,15 +20,7 @@ const AboutUs = () => {
 
         <div className={styles.staff_container}>
           <h1>Meet the Staff</h1>
-          <div className={styles.staff_profile}>
-            <img className={styles.staff_mem_photo} src="" alt="Staff Member picture placeHolder"/>
-            <div className={styles.staff_mem_info}>
-              <div className={styles.staff_mem_name}>
-                NAME
-              </div>
-              <div className={styles.staff_mem_bio}>About Me</div>
-            </div>
-          </div>
+  
         </div>
       </div>
     </main>
