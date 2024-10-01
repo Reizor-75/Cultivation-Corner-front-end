@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
 import AboutUs from './pages/AboutUs/AboutUs'
+import Shop from './pages/Shop/Shop'
 import Services from './pages/Services/Services'
 
 // components
@@ -68,6 +69,10 @@ function App() {
         <Route
           path="/aboutUs"
           element={ <AboutUs user={user}/> }
+        />
+        <Route
+          path="/Shop"
+          element={ <Shop user={user}/> }
         />
         <Route
           path="/Services"
