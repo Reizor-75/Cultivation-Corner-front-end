@@ -6,7 +6,7 @@ const ProductCard = ({product}) => {
     <div className={styles.product_container}>
       <img src="" alt="Product image" />
       <div className={styles.product_info}>
-        <h1>{product.name ?product.name : "Not Availible" }</h1>
+        <h1>{product.productName ?product.productName : "Not Availible" }</h1>
         <div className={styles.price}>{product.price ? product.price : "contact shop for price"}</div>
       </div>
     </div>
