@@ -1,5 +1,8 @@
+//npm modules
+import { useEffect, useState } from 'react'
+
 // services
-import * as profileServices from '../../services/profileService'
+import * as profileService from '../../services/profileService'
 
 // css
 import styles from './AboutUs.module.css'
@@ -8,6 +11,20 @@ import styles from './AboutUs.module.css'
 import MemberCard from '../../components/MemberCard/MemberCard'
 
 const AboutUs = () => {
+  const [profiles, setProfiles] = useState([])
+
+  useEffect(() => {
+    const fetchProfiles = async () => {
+      const employeeData = await profileService.getEmployeeProfiles()
+      setProfiles(employeeData)
+    }
+    fetchProfiles()
+  }, [])
+
+  if (!profiles.length) {
+    return <main className={styles.container}><h1>Loading...</h1></main>
+  }
+
   return (
     <main>
       <div className={styles.about_us_container}>
@@ -26,7 +43,9 @@ const AboutUs = () => {
 
         <div className={styles.staff_container}>
           <h1>Meet the Staff</h1>
-          <MemberCard></MemberCard>
+          { profiles.map(profile =>(
+            <MemberCard key={profile.id} content={profile}></MemberCard> 
+          ))}
         </div>
       </div>
     </main>
