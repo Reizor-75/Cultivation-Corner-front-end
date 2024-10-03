@@ -1,5 +1,6 @@
 // npm module
 import { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 // services
 import *as productService from '../../services/productService'
@@ -31,7 +32,7 @@ const Shop = ({user}) => {
       <div className={styles.shop_container}>
         <h1>Products</h1>
         {user.role === 900 && 
-          <button>Add new Product</button>
+          <NavLink to='/Shop/addProduct'><button>Add new Product</button></NavLink>
         }
         {products.map(product =>(
           <ProductCard key={product._id} product={product}></ProductCard>

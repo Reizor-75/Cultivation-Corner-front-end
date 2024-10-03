@@ -76,7 +76,7 @@ function App() {
           element={ <Shop user={user}/> }
         />
         <Route
-          path="/Shop/newProduct"
+          path="/Shop/addProduct"
           element={ <AddProduct user={user}/> }
         />
         <Route
