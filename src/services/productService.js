@@ -14,6 +14,23 @@ async function getAllProducts() {
   }
 }
 
+async function createProduct(prodoctFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/newProduct`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(prodoctFormData)
+    })
+    return res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 export{
   getAllProducts,
+  createProduct,
 }
