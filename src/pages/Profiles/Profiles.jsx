@@ -1,5 +1,6 @@
 // npm modules
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 // services
 import * as profileService from '../../services/profileService'
@@ -11,6 +12,8 @@ import styles from './Profiles.module.css'
 import MemberCard from '../../components/MemberCard/MemberCard'
 
 const Profiles = ({user}) => {
+  const navigate = useNavigate()
+
   const [profiles, setProfiles] = useState([])
 
   const handleUpdateRole = async(formData, memberId) =>{
@@ -26,7 +29,10 @@ const Profiles = ({user}) => {
     fetchProfiles()
   }, [])
 
-
+  if(user.role != 900){
+    navigate('/')
+  }
+  
   if (!profiles.length) {
     return <main className={styles.container}><h1>Loading...</h1></main>
   }

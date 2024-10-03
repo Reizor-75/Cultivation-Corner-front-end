@@ -23,8 +23,7 @@ const MemberCard = ({user, member, handleUpdateRole}) => {
     else if (member?.role >= 500) return "Employee";
     else return "Member";
   }
-  // console.log(formatRole)
-
+  
   return (
     <div className={styles.staff_profile}>
       <img className={styles.staff_mem_photo} src={member.photo ? member.photo : ""} alt="Member picture placeHolder"/>
