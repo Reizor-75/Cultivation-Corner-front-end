@@ -43,8 +43,26 @@ async function getEmployeeProfiles() {
   }
 }
 
+async function updateRole(formData, memberId){
+  try {
+    const res = await fetch(`${BASE_URL}/${memberId}/updateRole`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    return res.json()
+  }
+  catch(err){
+    throw new Error(err)
+  }
+}
+
 export { 
   getAllProfiles, 
   addPhoto,
-  getEmployeeProfiles
+  getEmployeeProfiles,
+  updateRole
 }

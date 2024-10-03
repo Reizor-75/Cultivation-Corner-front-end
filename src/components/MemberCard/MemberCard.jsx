@@ -15,7 +15,7 @@ const MemberCard = ({user, member, handleUpdateRole}) => {
 
   const handleSubmit = async evt => {
     evt.preventDefault()
-    handleUpdateRole(formData)
+    handleUpdateRole(formData, member._id)
   }
 
   return (

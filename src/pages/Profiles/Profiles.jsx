@@ -13,8 +13,8 @@ import MemberCard from '../../components/MemberCard/MemberCard'
 const Profiles = ({user}) => {
   const [profiles, setProfiles] = useState([])
 
-  const handleUpdateRole = async(formData) =>{
-    await profileService.updateRole(formData)
+  const handleUpdateRole = async(formData, memberId) =>{
+    await profileService.updateRole(formData, memberId)
     
   }
 
