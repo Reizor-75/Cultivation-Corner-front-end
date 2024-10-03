@@ -13,3 +13,8 @@
   width: 70%;
   /* background-color: darkcyan; */
 }
+
+.role_form{
+  display: flex;
+  flex-direction: column;
+}
