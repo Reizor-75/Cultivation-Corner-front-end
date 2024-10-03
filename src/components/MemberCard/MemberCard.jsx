@@ -30,7 +30,7 @@ const MemberCard = ({user, member, handleUpdateRole}) => {
       <div className={styles.staff_mem_info}>
         <div className={styles.staff_mem_name}>{member.name ? member.name : `name` }: {formatRole()}</div>
         {user?.role === 900  ?
-          member.role < 900 &&
+          user._id === member._id &&
           <form autoComplete="off" onSubmit={handleSubmit} className=''>
             <div className={styles.role_form}>
               <label htmlFor="100">
