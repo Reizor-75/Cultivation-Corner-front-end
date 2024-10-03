@@ -7,3 +7,8 @@
 .container > p {
   margin: 8px;
 }
+
+.role_form{
+  display: flex;
+  flex-direction: column;
+}
