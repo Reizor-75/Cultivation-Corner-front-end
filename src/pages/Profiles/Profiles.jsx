@@ -7,7 +7,7 @@ import * as profileService from '../../services/profileService'
 // css
 import styles from './Profiles.module.css'
 
-const Profiles = () => {
+const Profiles = ({user}) => {
   const [profiles, setProfiles] = useState([])
 
   useEffect(() => {
@@ -26,7 +26,11 @@ const Profiles = () => {
     <main className={styles.container}>
       <h1>Hello. This is a list of all the profiles.</h1>
       {profiles.map(profile => (
-        <p key={profile._id}>{profile.name}</p>
+        <p key={profile._id}>{profile.name}
+        {user?.role === 900  &&
+        <button> update role </button>
+        }
+        </p>
       ))}
     </main>
   )
