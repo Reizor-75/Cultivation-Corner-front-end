@@ -23,13 +23,14 @@ const MemberCard = ({user, member, handleUpdateRole}) => {
     else if (member?.role >= 500) return "Employee";
     else return "Member";
   }
-  
+
   return (
     <div className={styles.staff_profile}>
       <img className={styles.staff_mem_photo} src={member.photo ? member.photo : ""} alt="Member picture placeHolder"/>
       <div className={styles.staff_mem_info}>
         <div className={styles.staff_mem_name}>{member.name ? member.name : `name` }: {formatRole()}</div>
         {user?.role === 900  ?
+          member.role < 900 &&
           <form autoComplete="off" onSubmit={handleSubmit} className=''>
             <div className={styles.role_form}>
               <label htmlFor="100">
