@@ -2,6 +2,9 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
+// service
+import * as productService from "../../services/productService"
+
 // css
 import styles from './AddProduct.module.css' 
 
@@ -51,6 +54,7 @@ const AddProduct = () => {
 
   const handleSubmit = async evt => {
     evt.preventDefault()
+    await productService.createProduct(formData)
   }
 
   const { productName, quantity, price, productType } = formData
@@ -92,10 +96,13 @@ const AddProduct = () => {
         <label className={styles.label}>
           Product Type
           <select 
-            name={productType} 
+            name="productType" 
+            value={productType}
+            onChange={handleChange}
           >
-            <option value="Plant">Plant</option>
-            <option value="Soil">Soil</option>
+            <option value="" disabled hidden>Select Product Type</option>
+            <option value="plant">Plant</option>
+            <option value="soil">Soil</option>
             <option value="fertilizer">Fertilizer</option>
             <option value="planters">Planter</option>
           </select>

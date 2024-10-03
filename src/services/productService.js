@@ -1,5 +1,6 @@
 // services
 import * as tokenService from './tokenService'
+import { addPhoto } from './profileService'
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/products`
 
@@ -14,7 +15,7 @@ async function getAllProducts() {
   }
 }
 
-async function createProduct(prodoctFormData) {
+async function createProduct(prodoctFormData, photoData) {
   try {
     const res = await fetch(`${BASE_URL}/newProduct`, {
       method: 'POST',
