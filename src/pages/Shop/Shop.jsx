@@ -10,7 +10,7 @@ import ProductCard from '../../components/ProductCard/ProductCard'
 // css
 import styles from './Shop.module.css'
 
-const Shop = () => {
+const Shop = ({user}) => {
   const [products, setProducts] = useState()
 
   useEffect(() => {
@@ -30,6 +30,9 @@ const Shop = () => {
     <main className={styles.container}>
       <div className={styles.shop_container}>
         <h1>Products</h1>
+        {user.role === 900 && 
+          <button>Add new Product</button>
+        }
         {products.map(product =>(
           <ProductCard key={product._id} product={product}></ProductCard>
         ))}
