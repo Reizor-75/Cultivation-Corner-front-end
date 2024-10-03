@@ -18,11 +18,18 @@ const MemberCard = ({user, member, handleUpdateRole}) => {
     handleUpdateRole(formData, member._id)
   }
 
+  const formatRole = ()=>{
+    if(member?.role === 900) return "Owner";
+    else if (member?.role >= 500) return "Employee";
+    else return "Member";
+  }
+  // console.log(formatRole)
+
   return (
     <div className={styles.staff_profile}>
       <img className={styles.staff_mem_photo} src={member.photo ? member.photo : ""} alt="Member picture placeHolder"/>
       <div className={styles.staff_mem_info}>
-        <div className={styles.staff_mem_name}>{member.name ? member.name : "name"}</div>
+        <div className={styles.staff_mem_name}>{member.name ? member.name : `name` }: {formatRole()}</div>
         {user?.role === 900  ?
           <form autoComplete="off" onSubmit={handleSubmit} className=''>
             <div className={styles.role_form}>
@@ -35,6 +42,7 @@ const MemberCard = ({user, member, handleUpdateRole}) => {
                   name="role"
                   value= "100" 
                   onChange={handleChange}/>
+                  
               </label> 
               <label htmlFor="500">
                 Employee
