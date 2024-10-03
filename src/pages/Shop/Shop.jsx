@@ -30,13 +30,17 @@ const Shop = ({user}) => {
   return (
     <main className={styles.container}>
       <div className={styles.shop_container}>
-        <h1>Products</h1>
-        {user.role === 900 && 
-          <NavLink to='/Shop/addProduct'><button>Add new Product</button></NavLink>
-        }
-        {products.map(product =>(
-          <ProductCard key={product._id} product={product}></ProductCard>
-        ))}
+        <div className={styles.page_header}>
+          <h1>Products</h1>
+          {user.role === 900 && 
+            <NavLink to='/Shop/addProduct'><button>Add new Product</button></NavLink>
+          }
+        </div>
+        <div className={styles.product_container}>
+          {products.map(product =>(
+            <ProductCard key={product._id} product={product}></ProductCard>
+          ))}
+        </div>
       </div>
     </main>
   )
