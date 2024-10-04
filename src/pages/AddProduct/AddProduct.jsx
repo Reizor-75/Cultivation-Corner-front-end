@@ -54,7 +54,7 @@ const AddProduct = () => {
 
   const handleSubmit = async evt => {
     evt.preventDefault()
-    await productService.createProduct(formData)
+    await productService.createProduct(formData, photoData)
   }
 
   const { productName, quantity, price, productType } = formData

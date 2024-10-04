@@ -38,7 +38,7 @@ const Shop = ({user}) => {
         </div>
         <div className={styles.product_container}>
           {products.map(product =>(
-            <ProductCard key={product._id} product={product}></ProductCard>
+            <ProductCard key={product._id} product={product} user={user}></ProductCard>
           ))}
         </div>
       </div>
