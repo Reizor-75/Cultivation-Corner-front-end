@@ -30,7 +30,20 @@ async function createProduct(prodoctFormData, photoData) {
   }
 }
 
+async function showProduct(productId) {
+
+  try {
+    const res = await fetch(`${BASE_URL}/${productId}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 export{
   getAllProducts,
   createProduct,
+  showProduct
 }

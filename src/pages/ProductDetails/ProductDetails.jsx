@@ -10,20 +10,20 @@ import styles from './ProductDetails.module.css'
 
 const ProductDetails = ({user}) => {
   const {productId} = useParams()
-  const [product, setProduct] = useState()
+  const [product, setProduct] = useState(null)
 
   useEffect(() =>{
     const fetchWorkshop= async () => {
-      const data = await productServices.showproduct(productId)
+      const data = await productServices.showProduct(productId)
+      console.log(data)
       setProduct(data)
     }
     fetchWorkshop()
   }, [productId])
 
-
   return (  
     <main>
-      <h1 className={styles.product_container}>{product.productName}</h1>
+      <h1 className={styles.product_container}>{product?.productName}</h1>
     </main>
   );
 }
