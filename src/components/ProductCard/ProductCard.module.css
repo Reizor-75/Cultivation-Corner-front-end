@@ -12,3 +12,12 @@
   height: 250px;
   overflow: hidden;
 }
+
+.bottom_row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.price{
+  margin-right: auto;
+}
