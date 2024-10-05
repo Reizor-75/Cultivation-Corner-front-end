@@ -32,9 +32,6 @@ const ProductDetails = ({user}) => {
         <img className={styles.product_photo} src="" alt="Plant stock photo" />
         <div className={styles.product_info}>
           <h1 className={styles.product_Name}>{product?.productName}
-            {user?.role === 900 && 
-              <button>Delete product</button>
-            }
           </h1>
           <p className={styles.product_description}>
             {product.productDescription}

@@ -1,6 +1,6 @@
 // npm module
 import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 // services
 import *as productService from '../../services/productService'
@@ -13,6 +13,7 @@ import styles from './Shop.module.css'
 
 const Shop = ({user}) => {
   const [products, setProducts] = useState()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -21,6 +22,12 @@ const Shop = ({user}) => {
     }
     fetchProducts()
   }, [])
+
+  const handleDeleteProduct = async (productId) => {
+    const deletedProduct = await productService.deleteProduct(productId)
+    setProducts(products.filter((p) => p._id !== deletedProduct._id))
+    navigate('/shop')
+  }
 
   if(!products){
     return(<>
@@ -38,7 +45,7 @@ const Shop = ({user}) => {
         </div>
         <div className={styles.product_container}>
           {products.map(product =>(
-            <ProductCard key={product._id} product={product} user={user}></ProductCard>
+            <ProductCard key={product._id} product={product} user={user} handleDeleteProduct={handleDeleteProduct}></ProductCard>
           ))}
         </div>
       </div>

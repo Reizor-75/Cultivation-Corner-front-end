@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 // css
 import styles from './ProductCard.module.css'
 
-const ProductCard = ({user, product}) => {
+const ProductCard = ({user, product, handleDeleteProduct}) => {
   return (
     <NavLink to={`/Shop/${product._id}`}>
       <div className={styles.product_container}>
@@ -14,7 +14,12 @@ const ProductCard = ({user, product}) => {
           <div className={styles.bottom_row}>{product.price ? "$ " + product.price : "contact shop for price"}
             {user?.role >= 500 && <button>Edit</button> }
           </div>
-        </div>
+        </div> 
+        {user?.role === 900 && 
+          <div onClick={()=>handleDeleteProduct(product._id)}>
+            <i className="fa-solid fa-circle-xmark"></i>
+          </div>
+        }
       </div>
     </NavLink>
   )
