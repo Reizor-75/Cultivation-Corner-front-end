@@ -32,7 +32,7 @@ const Shop = ({user}) => {
       <div className={styles.shop_container}>
         <div className={styles.page_header}>
           <h1>Products</h1>
-          {user.role === 900 && 
+          {user?.role === 900 && 
             <NavLink to='/Shop/addProduct'><button>Add new Product</button></NavLink>
           }
         </div>
