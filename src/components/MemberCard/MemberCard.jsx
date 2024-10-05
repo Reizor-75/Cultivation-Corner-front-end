@@ -4,6 +4,8 @@ import { useState } from 'react'
 // css
 import styles from './MemberCard.module.css'
 
+import defaultMember from '../../assets/DefaultMember.jpg'
+
 const MemberCard = ({user, member, handleUpdateRole}) => {
   const [formData, setFormData] = useState({
     role:''
@@ -26,7 +28,9 @@ const MemberCard = ({user, member, handleUpdateRole}) => {
 
   return (
     <div className={styles.staff_profile}>
-      <img className={styles.staff_mem_photo} src={member.photo ? member.photo : ""} alt="Member picture placeHolder"/>
+      <div className={styles.image_container}>
+        <img className={styles.staff_mem_photo} src={member.photo ? member.photo : defaultMember} alt="Member picture placeHolder"/>
+        </div>
       <div className={styles.staff_mem_info}>
         <div className={styles.staff_mem_name}>{member.name ? member.name : `name` }: {formatRole()}</div>
         {user?.role === 900  ?

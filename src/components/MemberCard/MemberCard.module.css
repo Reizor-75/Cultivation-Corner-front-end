@@ -4,8 +4,17 @@
   height: 40vh;
 }
 
-.staff_mem_photo{
+.image_container{  
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30%;
+  overflow: hidden;
+  margin-right: 8px;
+}
+
+.staff_mem_photo{
+  width: 100%;
   /* background-color: aquamarine; */
 }
 
