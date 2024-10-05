@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
   height: 40vh;
+  margin-bottom: 16px;
 }
 
 .image_container{  
@@ -26,4 +27,9 @@
 .role_form{
   display: flex;
   flex-direction: column;
+}
+
+.staff_mem_name{
+  font-size: larger;
+  font-weight: 800;
 }
