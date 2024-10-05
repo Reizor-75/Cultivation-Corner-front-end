@@ -7,7 +7,12 @@ import styles from './ProductCard.module.css'
 const ProductCard = ({user, product, handleDeleteProduct}) => {
   return (
     <NavLink to={`/Shop/${product._id}`}>
-      <div className={styles.product_container}>
+      <div className={styles.product_container}> 
+        {user?.role === 900 && 
+          <div className={styles.delete_button} onClick={()=>handleDeleteProduct(product._id)}>
+            <i className="fa-solid fa-circle-xmark"></i>
+          </div>
+        }
         <img className= {styles.product_image} src="" alt="Product image" />
         <div className={styles.product_info}>
           <h1>{product.productName ?product.productName : "Not Availible" }</h1>
@@ -15,11 +20,6 @@ const ProductCard = ({user, product, handleDeleteProduct}) => {
             {user?.role >= 500 && <button>Edit</button> }
           </div>
         </div> 
-        {user?.role === 900 && 
-          <div onClick={()=>handleDeleteProduct(product._id)}>
-            <i className="fa-solid fa-circle-xmark"></i>
-          </div>
-        }
       </div>
     </NavLink>
   )

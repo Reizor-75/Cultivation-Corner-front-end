@@ -1,7 +1,8 @@
 .product_container{
   width: 300px;
   height: 300px;
-  display: flex;
+  display: flex ;
+  position: relative;
   flex-direction: column;
   margin: 16px;
 
@@ -20,4 +21,19 @@
 
 .price{
   margin-right: auto;
+}
+
+.delete_button{
+  display: block;
+  position: absolute;
+  top:0;
+  right: 0;
+  opacity: 50%;
+}
+
+.product_container:hover{
+  .delete_button{
+    opacity: 100%;
+    color: var(--main-color);
+  }
 }
