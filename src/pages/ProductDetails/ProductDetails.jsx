@@ -15,15 +15,32 @@ const ProductDetails = ({user}) => {
   useEffect(() =>{
     const fetchWorkshop= async () => {
       const data = await productServices.showProduct(productId)
-      console.log(data)
       setProduct(data)
     }
     fetchWorkshop()
   }, [productId])
 
+
+  if(!product){
+    return('Loading...')
+  }
+
   return (  
     <main>
-      <h1 className={styles.product_container}>{product?.productName}</h1>
+      
+      <div className={styles.product_container}>
+        <img className={styles.product_photo} src="" alt="Plant stock photo" />
+        <div className={styles.product_info}>
+          <h1 className={styles.product_Name}>{product?.productName}</h1>
+          <p className={styles.product_description}>
+            {product.productDescription}
+            {product.careInstruction}
+          </p>
+          {user && 
+            <button>Add To Cart</button>
+          }
+        </div>
+      </div>
     </main>
   );
 }

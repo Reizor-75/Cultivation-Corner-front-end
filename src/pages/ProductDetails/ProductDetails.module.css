@@ -1,0 +1,13 @@
+.product_container{
+  display: flex;
+  justify-content: center;
+  width: 60%;
+}
+
+.product_photo{
+  width: 50%;
+}
+
+.product_info{
+  width: 50%;
+}
