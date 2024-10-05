@@ -31,7 +31,6 @@ async function createProduct(prodoctFormData, photoData) {
 }
 
 async function showProduct(productId) {
-
   try {
     const res = await fetch(`${BASE_URL}/${productId}`, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
@@ -42,8 +41,23 @@ async function showProduct(productId) {
   }
 }
 
+async function deleteProduct(productId){
+  try {
+    const res = await fetch(`${BASE_URL}/${productId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export{
   getAllProducts,
   createProduct,
-  showProduct
+  showProduct,
+  deleteProduct
 }
