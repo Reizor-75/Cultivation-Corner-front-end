@@ -14,6 +14,7 @@ import Shop from './pages/Shop/Shop'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
 import AddProduct from './pages/AddProduct/AddProduct'
 import Services from './pages/Services/Services'
+import Blogs from './pages/Blogs/Blogs'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -87,6 +88,10 @@ function App() {
         <Route
           path="/Services"
           element={ <Services user={user}/> }
+        />
+        <Route
+          path="/Blogs"
+          element={ <Blogs user={user}/> }
         />
       </Routes>
     </>
