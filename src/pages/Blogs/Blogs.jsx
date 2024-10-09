@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react';
 // css
 import styles from './Blogs.module.css'
 
-const Blogs = ({user}) => {
+const Blogs = ({ user }) => {
   const [blogs, setBlog] = useState([])
 
   useEffect(() => {
     const fetchBlogs = async () => {
-      
+
       setBlog()
     }
     fetchBlogs()
