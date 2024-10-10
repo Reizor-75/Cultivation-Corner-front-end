@@ -15,7 +15,7 @@ const ProductCard = ({user, product, handleDeleteProduct}) => {
         }
         <img className= {styles.product_image} src="" alt="Product image" />
         <div className={styles.product_info}>
-          <h1>{product.productName ?product.productName : "Not Availible" }</h1>
+          <h1>{product.name ?product.name : "Not Availible" }</h1>
           <div className={styles.bottom_row}>{product.price ? "$ " + product.price : "contact shop for price"}
             {user?.role >= 500 && <button>Edit</button> }
           </div>
