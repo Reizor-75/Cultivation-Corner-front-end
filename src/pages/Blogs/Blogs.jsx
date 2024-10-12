@@ -1,5 +1,6 @@
 // npm modules
 import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 // service
 import * as blogService from '../../services/blogService'
@@ -21,7 +22,9 @@ const Blogs = ({ user }) => {
   return (  
     <main className={styles.main_container}>
       <h1>Blog</h1>
-      <button>New Blog Post</button>
+      { user?.role >= 500 && 
+        <NavLink to="/blogs/newBlog"> <button>New Blog Post</button> </NavLink>
+      }
       <div className={styles.recent_blog}></div>
       <div className={styles.blog_container}>
         { blogs ? 

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import * as productService from "../../services/productService"
 
 // css
-import styles from './AddProduct.module.css' 
+import styles from './NewProduct.module.css' 
 
 const AddProduct = () => {
   const imgInputRef = useRef(null)
