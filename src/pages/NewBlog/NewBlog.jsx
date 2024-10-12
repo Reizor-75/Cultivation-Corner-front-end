@@ -1,10 +1,16 @@
 // npm module
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+// services
+import * as blogService from '../../services/blogService'
 
 // css
 import styles from './NewBlog.module.css'
 
 const NewBlog = () => {
+  const navigate = useNavigate()
+
   const [formData, setFormData] = useState({
     title: '',
     content: '',
@@ -17,6 +23,8 @@ const NewBlog = () => {
 
   const handleSubmit = async evt => {
     evt.preventDefault()
+    await blogService.createBlogPost(formData)
+    navigate('/blogs')
   }
 
   const { title, content, productList } = formData
