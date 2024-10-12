@@ -12,9 +12,10 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import AboutUs from './pages/AboutUs/AboutUs'
 import Shop from './pages/Shop/Shop'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
-import AddProduct from './pages/AddProduct/AddProduct'
+import NewProduct from './pages/NewProduct/NewProduct'
 import Services from './pages/Services/Services'
 import Blogs from './pages/Blogs/Blogs'
+import NewBlog from './pages/NewBlog/NewBlog'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -82,8 +83,8 @@ function App() {
           element={ <ProductDetails user={user}/> }
         />
         <Route
-          path="/Shop/addProduct"
-          element={ <AddProduct user={user}/> }
+          path="/Shop/newProduct"
+          element={ <NewProduct user={user}/> }
         />
         <Route
           path="/Services"
@@ -92,6 +93,10 @@ function App() {
         <Route
           path="/Blogs"
           element={ <Blogs user={user}/> }
+        />
+        <Route
+          path="/Blogs/newBlog"
+          element={ <NewBlog user={user}/> }
         />
       </Routes>
     </>
