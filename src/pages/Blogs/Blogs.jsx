@@ -18,18 +18,19 @@ const Blogs = ({ user }) => {
     fetchBlogs()
   }, [])
 
-  if(!blogs){
-    return <h1>Loading...</h1>
-  }
-
   return (  
     <main className={styles.main_container}>
+      <h1>Blog</h1>
+      <button>New Blog Post</button>
+      <div className={styles.recent_blog}></div>
       <div className={styles.blog_container}>
-        <h1>Blog</h1>
-        <div className={styles.recent_blog}></div>
-        {blogs.map(blog =>(
-          blog.title
-        ) )}
+        { blogs ? 
+          "No Blogs Available"
+        :
+          blogs.map(blog =>(
+            blog.title
+          ))
+        }
       </div>
     </main>
   );
