@@ -14,6 +14,23 @@ async function getAllBlogs() {
   }
 }
 
+async function createBlogPost(blogData) {
+  try {
+    const res = await fetch(`${BASE_URL}/newPost`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(blogData)
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 export{
   getAllBlogs,
+  createBlogPost,
 }
