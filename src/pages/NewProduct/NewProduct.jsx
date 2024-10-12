@@ -13,7 +13,7 @@ const AddProduct = () => {
 
   const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
-    productName: '',
+    name: '',
     quantity: '',
     price: '',
     productType: '',
