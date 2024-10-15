@@ -53,6 +53,16 @@ const NewBlog = () => {
             required
           />
         </label>
+        <label>
+          Products
+        <input
+            type="text"
+            value={productList}
+            name="productList"
+            onChange={handleChange}
+            required
+          />
+        </label>
       </form>
     </main>
   );
