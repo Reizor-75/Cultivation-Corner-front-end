@@ -1,5 +1,5 @@
 // npm module
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // services
@@ -11,6 +11,12 @@ import styles from './NewBlog.module.css'
 const NewBlog = ({user}) => {
   const navigate = useNavigate()
 
+  useEffect(() =>{
+    if(!user || user.role <500){
+      navigate("/")
+    }
+  }, [user, navigate])
+  
   const [formData, setFormData] = useState({
     title: '',
     content: '',
@@ -29,11 +35,6 @@ const NewBlog = ({user}) => {
 
   const { title, content, productList } = formData
 
-  if(!user || user.role <500){
-    return (
-      navigate("/")
-    )
-  }
   return ( 
     <main className={styles.main_container}>
       <h1>New Blog</h1>

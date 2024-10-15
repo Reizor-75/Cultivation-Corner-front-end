@@ -1,6 +1,6 @@
 // npm module
-import { useState, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect, useRef } from 'react'
+import { Link, useNavigate} from 'react-router-dom'
 
 // service
 import * as productService from "../../services/productService"
@@ -8,9 +8,16 @@ import * as productService from "../../services/productService"
 // css
 import styles from './NewProduct.module.css' 
 
-const AddProduct = () => {
+const NewProduct = ({ user }) => {
+  const navigate = useNavigate()
   const imgInputRef = useRef(null)
 
+  useEffect(() =>{
+    if(!user || user.role <500){
+      navigate("/")
+    }
+  }, [user, navigate])
+  
   const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
     name: '',
@@ -58,6 +65,8 @@ const AddProduct = () => {
   }
 
   const { productName, quantity, price, productType } = formData
+
+
 
   return (
     <main className={styles.container}>
@@ -129,4 +138,4 @@ const AddProduct = () => {
   );
 }
 
-export default AddProduct;
+export default NewProduct;
