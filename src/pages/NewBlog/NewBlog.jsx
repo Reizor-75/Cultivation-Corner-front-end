@@ -8,7 +8,7 @@ import * as blogService from '../../services/blogService'
 // css
 import styles from './NewBlog.module.css'
 
-const NewBlog = () => {
+const NewBlog = ({user}) => {
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
@@ -29,6 +29,11 @@ const NewBlog = () => {
 
   const { title, content, productList } = formData
 
+  if(!user || user.role <500){
+    return (
+      navigate("/")
+    )
+  }
   return ( 
     <main className={styles.main_container}>
       <h1>New Blog</h1>
