@@ -44,7 +44,17 @@ const NewBlog = () => {
           />
         </label>
         <label className={styles.label}>
-          content
+          Products
+          <input
+              type="text"
+              value={productList}
+              name="productList"
+              onChange={handleChange}
+              required
+            />
+        </label>
+        <label className={styles.label}>
+          Content
           <textarea
             type="text"
             value={content}
@@ -53,16 +63,7 @@ const NewBlog = () => {
             required
           />
         </label>
-        <label>
-          Products
-        <input
-            type="text"
-            value={productList}
-            name="productList"
-            onChange={handleChange}
-            required
-          />
-        </label>
+        <button className={styles.button}>Submit Post</button>
       </form>
     </main>
   );
