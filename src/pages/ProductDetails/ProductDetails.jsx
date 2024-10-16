@@ -39,7 +39,8 @@ const ProductDetails = ({user}) => {
     <main>
       
       <div className={styles.product_container}>
-        <img className={styles.product_photo} src={productImage} alt="Plant stock photo" />
+        <div className={styles.image_container}>
+          <img className={styles.product_photo} src={productImage} alt="Product photo" /></div>
         <div className={styles.product_info}>
           <h1 className={styles.product_Name}>{product.name}
           </h1>

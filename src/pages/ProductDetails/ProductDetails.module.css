@@ -4,8 +4,17 @@
   width: 60%;
 }
 
-.product_photo{
+.image_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50%;
+  /* height: 400px; */
+  margin-right: 16px;
+}
+
+.product_photo{
+  overflow: hidden;
 }
 
 .product_info{
