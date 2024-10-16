@@ -1,5 +1,4 @@
 // npm modules
-import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
 // css

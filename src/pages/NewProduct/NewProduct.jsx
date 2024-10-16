@@ -112,7 +112,8 @@ const NewProduct = ({ user }) => {
             <option value="plant">Plant</option>
             <option value="soil">Soil</option>
             <option value="fertilizer">Fertilizer</option>
-            <option value="planters">Planter</option>
+            <option value="planter">Planter</option>
+            <option value="tool">Tool</option>
           </select>
         </label>
         <label className={styles.label}>
