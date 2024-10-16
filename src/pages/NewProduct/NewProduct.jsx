@@ -17,7 +17,7 @@ const NewProduct = ({ user }) => {
       navigate("/")
     }
   }, [user, navigate])
-  
+
   const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
     name: '',
@@ -62,11 +62,10 @@ const NewProduct = ({ user }) => {
   const handleSubmit = async evt => {
     evt.preventDefault()
     await productService.createProduct(formData, photoData)
+    navigate('/shop')
   }
 
-  const { productName, quantity, price, productType } = formData
-
-
+  const { name, quantity, price, productType } = formData
 
   return (
     <main className={styles.container}>
@@ -77,8 +76,8 @@ const NewProduct = ({ user }) => {
           Product Name
           <input
             type="text"
-            value={productName}
-            name="productName"
+            value={name}
+            name="name"
             onChange={handleChange}
             required
           />
