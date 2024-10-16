@@ -9,7 +9,7 @@ const ProductCard = ({user, product, handleDeleteProduct}) => {
     <NavLink to={`/Shop/${product._id}`}>
       <div className={styles.product_container}> 
         {user?.role === 900 && 
-          <div className={styles.delete_button} onClick={()=>handleDeleteProduct(product._id)}>
+          <div className={styles.delete_button} onClick={()=> handleDeleteProduct(product._id)}>
             <i className="fa-solid fa-circle-xmark"></i>
           </div>
         }

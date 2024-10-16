@@ -40,7 +40,7 @@ const Shop = ({user}) => {
         <div className={styles.page_header}>
           <h1>Products</h1>
           {user?.role === 900 && 
-            <NavLink to='/Shop/addProduct'><button>Add new Product</button></NavLink>
+            <NavLink to='/Shop/newProduct'><button>Add new Product</button></NavLink>
           }
         </div>
         <div className={styles.product_container}>
