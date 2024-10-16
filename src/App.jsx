@@ -13,6 +13,7 @@ import AboutUs from './pages/AboutUs/AboutUs'
 import Shop from './pages/Shop/Shop'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
 import NewProduct from './pages/NewProduct/NewProduct'
+import EditProduct from './pages/EditProduct/EditProduct'
 import Services from './pages/Services/Services'
 import Blogs from './pages/Blogs/Blogs'
 import NewBlog from './pages/NewBlog/NewBlog'
@@ -81,6 +82,10 @@ function App() {
         <Route
           path="/Shop/:productId"
           element={ <ProductDetails user={user}/> }
+        />
+        <Route
+          path="/Shop/Edit/:productId"
+          element={ <EditProduct user={user}/> }
         />
         <Route
           path="/Shop/newProduct"
