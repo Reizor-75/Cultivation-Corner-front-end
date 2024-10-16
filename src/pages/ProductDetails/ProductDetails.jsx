@@ -42,7 +42,10 @@ const ProductDetails = ({user}) => {
         <div className={styles.image_container}>
           <img className={styles.product_photo} src={productImage} alt="Product photo" /></div>
         <div className={styles.product_info}>
-          <h1 className={styles.product_Name}>{product.name}
+          <h1 className={styles.product_Name}>    
+            {product.name}
+            
+            {user?.role >= 500 && <button>Edit</button> }
           </h1>
           <div>
             $ {product.price}
