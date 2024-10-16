@@ -22,7 +22,9 @@ const ProductCard = ({user, product, handleDeleteProduct}) => {
             <i className="fa-solid fa-circle-xmark"></i>
           </div>
         }
-        <img className= {styles.product_image} src={productImage} alt="Product image" />
+        <div className={styles.image_container}>             
+          <img className= {styles.product_image} src={productImage} alt="Product image"/>
+        </div>
         <div className={styles.product_info}>
           <h1>{product.name ?product.name : "Not Availible" }</h1>
           <div className={styles.bottom_row}>{product.price ? "$ " + product.price : "contact shop for price"}

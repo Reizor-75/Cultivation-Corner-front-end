@@ -8,10 +8,17 @@
 
 }
 
-.product_image{
+.image_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 300px;
-  height: 250px;
+  height: 250px;  
   overflow: hidden;
+}
+
+.product_image{
+  height: 100%;
 }
 
 .bottom_row{
