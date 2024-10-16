@@ -1,6 +1,6 @@
 // npm modules
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 // services
 import * as productServices from '../../services/productService'
@@ -45,7 +45,7 @@ const ProductDetails = ({user}) => {
           <h1 className={styles.product_Name}>    
             {product.name}
             
-            {user?.role >= 500 && <button>Edit</button> }
+            {user?.role >= 500 && <Link to={`/shop/edit/${product._id}`} state={product}><button>Edit</button></Link>     }
           </h1>
           <div>
             $ {product.price}
