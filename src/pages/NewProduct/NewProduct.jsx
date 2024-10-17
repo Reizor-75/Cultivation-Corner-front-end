@@ -24,6 +24,8 @@ const NewProduct = ({ user }) => {
     quantity: '',
     price: '',
     productType: '',
+    description: '',
+    careInstructions: '',
   })
   const [photoData, setPhotoData] = useState({ photo: null })
 
@@ -65,7 +67,7 @@ const NewProduct = ({ user }) => {
     navigate('/shop')
   }
 
-  const { name, quantity, price, productType } = formData
+  const { name, quantity, price, productType, description ,careInstructions } = formData
 
   return (
     <main className={styles.container}>
@@ -125,11 +127,29 @@ const NewProduct = ({ user }) => {
             ref={imgInputRef}
           />
         </label>
+        <label className={styles.label}>
+          Description
+          <textarea
+            type="text"
+            value={description}
+            name="description"
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label className={styles.label}>
+          Care Instructions
+          <textarea
+            type="text"
+            value={careInstructions}
+            name="careInstructions"
+            onChange={handleChange}
+            required
+          />
+        </label>
         <div>
           <Link to="/">Cancel</Link>
-          <button
-            className={styles.button}
-          >
+          <button className={styles.button}>
             Add Product
           </button>
         </div>
