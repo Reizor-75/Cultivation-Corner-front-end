@@ -66,6 +66,26 @@ const EditProduct = () => {
             <option value="tool">Tool</option>
           </select>
         </label>
+        <label className={styles.label}>
+          Description
+          <textarea
+            type="text"
+            value={formData.description}
+            name="description"
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label className={styles.label}>
+          Care Instructions
+          <textarea
+            type="text"
+            value={formData.careInstructions}
+            name="careInstructions"
+            onChange={handleChange}
+            required
+          />
+        </label>
         <div>
           <Link to="/">Cancel</Link>
           <button
