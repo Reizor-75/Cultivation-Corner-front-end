@@ -55,9 +55,9 @@ async function deleteProduct(productId){
   }
 }
 
-async function updateProduct(productId, formData) {
+async function updateProduct(formData) {
   try {
-    const res = await fetch(`${BASE_URL}/${productId}`, {
+    const res = await fetch(`${BASE_URL}/${formData._id}`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,

@@ -2,6 +2,9 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
+// services
+import * as productService from '../../services/productService'
+
 // css
 import styles from './EditProduct.module.css'
 
@@ -15,6 +18,7 @@ const EditProduct = () => {
 
   const handleSubmit = async evt => {
     evt.preventDefault() 
+    productService.updateProduct(formData)
   }
 
   return ( 
