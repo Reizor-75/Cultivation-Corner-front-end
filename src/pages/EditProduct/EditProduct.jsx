@@ -1,6 +1,6 @@
 // npm modules
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate} from 'react-router-dom'
 
 // services
 import * as productService from '../../services/productService'
@@ -11,6 +11,7 @@ import styles from './EditProduct.module.css'
 const EditProduct = () => {
   const { state } = useLocation()
   const [formData, setFormData] = useState( state)
+  const navigate = useNavigate()
 
   const handleChange = evt => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
@@ -19,6 +20,7 @@ const EditProduct = () => {
   const handleSubmit = async evt => {
     evt.preventDefault() 
     productService.updateProduct(formData)
+    navigate(`/shops/${formData._id}`)
   }
 
   return ( 
