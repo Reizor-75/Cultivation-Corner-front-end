@@ -15,23 +15,23 @@ const NavBar = ({ user, handleLogout }) => {
             <li><NavLink to="/auth/change-password">Change Password</NavLink></li>
              */}
           </ul>
-          <ul>
-            <li><NavLink to="/AboutUs">About Us</NavLink></li>
-            <li><NavLink to="/Shop">Shop</NavLink></li>
-            <li><NavLink to="/Services">Services</NavLink></li>
-            <li><NavLink to="/Blogs">Blog</NavLink></li>
-            
-            {user ?
-              <>
-                <li><NavLink to="" onClick={handleLogout}><i className="fa-solid fa-circle-user"></i></NavLink></li>
-              </>
-              :
-              <>
-                <li><NavLink to="/auth/signup">Sign Up</NavLink></li>                
-              <li><NavLink to="/auth/login">Log In</NavLink></li>
-              </>
-            }
-          </ul>
+        <div className={styles.navigation_links}>
+          <NavLink to="/AboutUs">About Us</NavLink>
+          <NavLink to="/Shop">Shop</NavLink>
+          <NavLink to="/Services">Services</NavLink>
+          <NavLink to="/Blogs">Blog</NavLink>
+              
+          {user ?
+            <>
+              <NavLink to="" onClick={handleLogout}><i className="fa-solid fa-circle-user"></i></NavLink>
+            </>
+            :
+            <>
+              <NavLink to="/auth/signup">Sign Up</NavLink>
+              <NavLink to="/auth/login">Log In</NavLink>
+            </>
+          }
+        </div>
       </div>
     </nav>
   )
