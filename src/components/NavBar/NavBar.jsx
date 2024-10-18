@@ -32,7 +32,9 @@ const NavBar = ({ user, handleLogout }) => {
             </>
           }
         </div>
+        
       </div>
+      <hr />
     </nav>
   )
 }

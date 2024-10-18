@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 8px 24px;
+  margin: 12px 24px;
 }
 
 .site_Title{
@@ -22,4 +22,12 @@
 
 .navigation_links> a:hover{
     opacity: 1;
+}
+
+hr{
+  height: 2px;
+  opacity: .5;
+  color: var(--main-color);
+  background-color: var(--main-color);
+  width: 100%;
 }
