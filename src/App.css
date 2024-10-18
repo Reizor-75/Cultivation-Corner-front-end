@@ -52,3 +52,7 @@ main{
   justify-content: center;
 }
 
+.contianer{
+    width: 60vw;
+    min-width: 800px;
+  }
