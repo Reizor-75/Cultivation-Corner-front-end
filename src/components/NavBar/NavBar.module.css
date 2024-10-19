@@ -31,3 +31,34 @@ hr{
   background-color: var(--main-color);
   width: 100%;
 }
+
+
+.userLinks{
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown_menu{
+  display: none;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 4px;
+  a{
+    display: flex;
+    justify-content: right;
+    padding: 8px;
+    width: 150px;
+    background-color: white;
+  }
+}
+
+.userLinks:hover{
+  .dropdown_menu{
+    display: block;
+    position: absolute;
+    right: 8px;
+    a:hover{
+      color: var(--accent-color);
+      border-radius: 4px;
+    }
+  }
+}
