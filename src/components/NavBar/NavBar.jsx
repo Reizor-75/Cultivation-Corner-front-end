@@ -20,21 +20,18 @@ const NavBar = ({ user, handleLogout }) => {
           <NavLink to="/Shop">Shop</NavLink>
           <NavLink to="/Services">Services</NavLink>
           <NavLink to="/Blogs">Blog</NavLink>
-          <div className={styles.userLinks}>
-            <i className="fa-solid fa-circle-user"></i>
             {user ?
-              <div className={styles.dropdown_menu}>               
-                <NavLink to={`/profiles/${user.profile}`}>My Profile</NavLink>
-                <NavLink to="/auth/change-password">Change Password</NavLink>
-                <NavLink to="" onClick={handleLogout}>Log Out</NavLink>
-              </div>
+              <>               
+                <NavLink className={styles.user_link} to={`/profiles/${user.profile}`}>My Profile</NavLink>
+                <NavLink className={styles.user_link} to="/auth/change-password">Change Password</NavLink>
+                <NavLink className={styles.user_link} to="" onClick={handleLogout}>Log Out</NavLink>
+              </>
               :
-              <>
-                <NavLink to="/auth/signup">Sign Up</NavLink>
-                <NavLink to="/auth/login">Log In</NavLink>
+              <>    
+                <NavLink className={styles.user_link} to="/auth/signup">Sign Up</NavLink>
+                <NavLink className={styles.user_link} to="/auth/login">Log In</NavLink>
               </>
             }
-          </div>
         </div>        
       </div>
       {/* <hr /> */}
