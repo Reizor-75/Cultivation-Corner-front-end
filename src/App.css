@@ -6,7 +6,7 @@
 
 :root {
   --main-color: #818C5A;
-  --background-color: #ffffff;
+  --background-color: #fefefe;
   --accent-color: #d97e4a;
   --font-xs: 1em;
   --font-s: 1.3em;
@@ -21,7 +21,12 @@ body {
   margin: 0;
   min-height: 100vh;
   min-width: 800;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  /* font-family: "Figtree", sans-serif; */
+  font-family: "Encode Sans Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  letter-spacing: 1px;
 
   color: var(--main-color);
   background-color: var(--background-color);
@@ -52,7 +57,17 @@ main{
   justify-content: center;
 }
 
-.contianer{
-    width: 60vw;
-    min-width: 800px;
-  }
+button{
+  background-color: var(--main-color);
+  border-radius: 8px;
+  padding: 8px;
+  border: none;
+  color: var(--background-color);
+  box-shadow: 4px 4px 8px #00000044;
+
+}
+
+button:hover{
+  background-color: var(--accent-color);
+  box-shadow: none;
+]
