@@ -18,13 +18,18 @@ nav{
 
 .navigation_links{
   width: 640px;
+  height: fit-content;
   display: flex;
+  justify-content: right;
   font-weight: 600;
   a{
     opacity: .75;
     margin: 8px;
-    padding: 8px 16px;
   }
+}
+
+.reg_links{
+  padding: 8px;
 }
 
 .navigation_links> a:hover{
@@ -44,10 +49,19 @@ hr{
   background-color: var(--accent-color);
   border-radius: 16px;
   box-shadow: 2px 2px 4px #00000066;
+  padding: 8px 16px;
 }
 
 .user_link:hover{
   color: var(--background-color);
   background-color: var(--main-color);
   box-shadow: 2px 2px 0px #00000066;
+}
+
+@media screen and (max-width: 800px){
+  .nav_container{
+    width: 100%;    
+    margin: 0px;
+    font-size: var(--fonts);
+  }
 }

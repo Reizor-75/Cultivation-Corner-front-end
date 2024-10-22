@@ -16,10 +16,10 @@ const NavBar = ({ user, handleLogout }) => {
              */}
           </ul>
         <div className={styles.navigation_links}>
-          <NavLink to="/AboutUs">About Us</NavLink>
-          <NavLink to="/Shop">Shop</NavLink>
-          <NavLink to="/Services">Services</NavLink>
-          <NavLink to="/Blogs">Blog</NavLink>
+          <NavLink className={styles.reg_links} to="/AboutUs">About Us</NavLink>
+          <NavLink className={styles.reg_links} to="/Shop">Shop</NavLink>
+          <NavLink className={styles.reg_links} to="/Services">Services</NavLink>
+          <NavLink className={styles.reg_links} to="/Blogs">Blog</NavLink>
             {user ?
               <>               
                 <NavLink className={styles.user_link} to={`/profiles/${user.profile}`}>My Profile</NavLink>

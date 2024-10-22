@@ -8,11 +8,11 @@
   --main-color: #818C5A;
   --background-color: #fefefe;
   --accent-color: #d97e4a;
-  --font-xs: 1em;
-  --font-s: 1.3em;
-  --font-m: 1.6em;
-  --font-l: 2em;
-  --font-xl: 3em;
+  --font-xs: .8em;
+  --font-s: 1em;
+  --font-m: 1.3em;
+  --font-l: 1.6em;
+  --font-xl: 2em;
 }
 
 body {
@@ -20,7 +20,7 @@ body {
 
   margin: 0;
   min-height: 100vh;
-  min-width: 800;
+  min-width: 800px;
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   /* font-family: "Figtree", sans-serif; */
   font-family: "Encode Sans Condensed", sans-serif;
