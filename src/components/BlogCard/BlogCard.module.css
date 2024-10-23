@@ -1,4 +1,7 @@
 .blog_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 320px;
   height: 320px;
   margin: 16px;
@@ -31,7 +34,7 @@
 
 .read_more{
   display: flex;
-  padding: 2px 8px;
+  padding: 2px 8px;  
 }
 
 .blog_container:hover{
