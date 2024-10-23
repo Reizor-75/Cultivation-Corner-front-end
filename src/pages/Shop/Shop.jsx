@@ -38,7 +38,7 @@ const Shop = ({user}) => {
     <main>
       <div className={styles.container}>
         <div className={styles.page_header}>
-          <h1>Products</h1>
+          {/* <h1>Products</h1> */}
           {user?.role === 900 && 
             <NavLink to='/Shop/newProduct'><button>Add new Product</button></NavLink>
           }

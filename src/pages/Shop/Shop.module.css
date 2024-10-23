@@ -1,9 +1,8 @@
 .container{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 60vw;
-  min-width: 800px;
+  align-items: left;
+  width: 60%;
 } 
 
 .page_header{
@@ -16,5 +15,11 @@
 .product_container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
+}
+
+@media screen and (max-width: 800px){
+  .container{
+    width: 85%;
+  }
 }

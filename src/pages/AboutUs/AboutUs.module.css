@@ -1,6 +1,6 @@
 .container{
-  width: 60vw;
-  min-width: 800px;
+  width: 60%;
+  /* min-width: 600px; */
 }
 
 .shop_image_contaniner{
@@ -29,4 +29,10 @@
   /* background-color: red; */
   width:100%;
 
+}
+
+@media screen and (max-width: 800px){
+  .container{
+    width: 85%;
+  }
 }

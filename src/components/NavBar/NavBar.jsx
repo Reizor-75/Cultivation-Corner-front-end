@@ -22,8 +22,8 @@ const NavBar = ({ user, handleLogout }) => {
           <NavLink className={styles.reg_links} to="/Blogs">Blog</NavLink>
             {user ?
               <>               
-                <NavLink className={styles.user_link} to={`/profiles/${user.profile}`}>My Profile</NavLink>
-                <NavLink className={styles.user_link} to="/auth/change-password">Change Password</NavLink>
+                <NavLink className={styles.user_link} to={`/profiles/${user.profile}`}> Profile</NavLink>
+                {/* <NavLink className={styles.user_link} to="/auth/change-password">Change Password</NavLink> */}
                 <NavLink className={styles.user_link} to="" onClick={handleLogout}>Log Out</NavLink>
               </>
               :

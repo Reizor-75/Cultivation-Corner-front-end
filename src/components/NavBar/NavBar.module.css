@@ -59,9 +59,14 @@ hr{
 }
 
 @media screen and (max-width: 800px){
+  nav{ 
+    width: 98%;
+    margin: 4px;
+  }
+
   .nav_container{
-    width: 100%;    
+    width: 100%;   
     margin: 0px;
-    font-size: var(--fonts);
+    font-size: var(--font-xs);
   }
 }
