@@ -16,7 +16,7 @@ const NewBlog = ({user}) => {
       navigate("/")
     }
   }, [user, navigate])
-  
+
   const [formData, setFormData] = useState({
     title: '',
     content: '',
@@ -56,7 +56,7 @@ const NewBlog = ({user}) => {
               value={productList}
               name="productList"
               onChange={handleChange}
-              required
+
             />
         </label>
         <label className={styles.label}>
