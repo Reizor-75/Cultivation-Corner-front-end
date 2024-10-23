@@ -10,6 +10,10 @@ const BlogCard = ({ blog }) => {
     </div>
     <div className={styles.blog_title}>{blog.title}</div>
     <div className={styles.blog_content}>{blog.content}</div>
+    <div className={styles.read_more}>
+    <div className={styles.dash}>&#8212;</div>
+    <div className={styles.rm_text}>Read More</div>
+    </div>
   </div> );
 }
 

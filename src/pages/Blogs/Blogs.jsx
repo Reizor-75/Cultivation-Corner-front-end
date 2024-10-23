@@ -24,7 +24,7 @@ const Blogs = ({ user }) => {
   console.log(blogs)
   return (  
     <main className={styles.main_container}>
-      <h1>Blog</h1>
+      {/* <h1>Blog</h1> */}
       { user?.role >= 500 && 
         <NavLink to="/blogs/newBlog"> <button>New Blog Post</button> </NavLink>
       }
