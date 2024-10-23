@@ -5,6 +5,8 @@ import { NavLink } from 'react-router-dom';
 // service
 import * as blogService from '../../services/blogService'
 
+// componenets
+import BlogCard from '../../components/BlogCard/BlogCard';
 // css
 import styles from './Blogs.module.css'
 
@@ -32,7 +34,7 @@ const Blogs = ({ user }) => {
           "No Blogs Available"
         :
           blogs.map(blog =>(
-            blog.title
+            <BlogCard key={blog._id} blog={blog}/>
           ))
         }
       </div>
