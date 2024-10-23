@@ -13,12 +13,13 @@ const Blogs = ({ user }) => {
 
   useEffect(() => {
     const fetchBlogs = async () => {
-      const blogsData = await blogService.getAllProducts()
+      const blogsData = await blogService.getAllBlogs()
       setBlog(blogsData)
     }
     fetchBlogs()
   }, [])
 
+  console.log(blogs)
   return (  
     <main className={styles.main_container}>
       <h1>Blog</h1>
@@ -27,7 +28,7 @@ const Blogs = ({ user }) => {
       }
       <div className={styles.recent_blog}></div>
       <div className={styles.blog_container}>
-        { blogs ? 
+        { !blogs ? 
           "No Blogs Available"
         :
           blogs.map(blog =>(
