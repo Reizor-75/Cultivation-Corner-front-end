@@ -30,7 +30,19 @@ async function createBlogPost(blogData) {
   }
 }
 
+async function showBlog(blogId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${blogId}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 export{
   getAllBlogs,
   createBlogPost,
+  showBlog,
 }
