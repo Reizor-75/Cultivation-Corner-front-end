@@ -17,6 +17,7 @@ import EditProduct from './pages/EditProduct/EditProduct'
 import Services from './pages/Services/Services'
 import Blogs from './pages/Blogs/Blogs'
 import NewBlog from './pages/NewBlog/NewBlog'
+import BlogDetails from './pages/BlogDetails/BlogDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -98,6 +99,10 @@ function App() {
         <Route
           path="/Blogs"
           element={ <Blogs user={user}/> }
+        />
+        <Route
+          path="/Blogs/:blogId"
+          element={ <BlogDetails user={user}/> }
         />
         <Route
           path="/Blogs/newBlog"
