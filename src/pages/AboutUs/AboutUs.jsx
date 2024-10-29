@@ -30,7 +30,6 @@ const AboutUs = () => {
   return (
     <main>
       <div className={styles.container}>
-        {/* <h1>About Us</h1> */}
         <div className={styles.shop_image_contaniner}>
           <img className={styles.shop_image } src={plantShop}  alt='Shop image Place holder'/>
         </div>
