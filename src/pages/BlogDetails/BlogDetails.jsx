@@ -11,7 +11,7 @@ import AuthorCard from '../../components/AuthorCard/AuthorCard'
 // css
 import styles from './BlogDetails.module.css'
 
-const BlogDetails = ({user}) => {
+const BlogDetails = () => {
   const {blogId} = useParams()
   const [blog, setBlog] = useState(null)
 
@@ -35,11 +35,14 @@ const BlogDetails = ({user}) => {
 
   return (  
     <main className={styles.main_container}>
-      <div className={styles.blog_header}>{blog.title}
+      <div className={styles.blog_header}>
+        <div className={styles.blog_title}>{blog.title}</div>
+        <div className={styles.publishDate}> {formatDate(blog.createdAt)}</div>
       </div>
-      <div>{blog.author.name}</div>
-      <div>{formatDate(blog.createdAt)}</div>
-      <div>{blog.content}</div>
+
+      
+      <div 
+      className={styles.blog_content}>{blog.content}</div>
       <AuthorCard key={blog.author._id} author={blog.author}/>
     </main>
   );
