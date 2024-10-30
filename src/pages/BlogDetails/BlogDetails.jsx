@@ -35,15 +35,18 @@ const BlogDetails = () => {
 
   return (  
     <main className={styles.main_container}>
-      <div className={styles.blog_header}>
-        <div className={styles.blog_title}>{blog.title}</div>
-        <div className={styles.publishDate}> {formatDate(blog.createdAt)}</div>
+      <div className={styles.blog_container}>
+        <div className={styles.blog_header}>
+          <div className={styles.blog_title}>{blog.title}</div>
+          <div className={styles.publishDate}> {formatDate(blog.createdAt)}</div>
+        </div>      
+        <div className={styles.blog_content}> {blog.content}</div>
+        <AuthorCard key={blog.author._id} author={blog.author}/>
+      </div>
+      <div className={styles.commment_container}>
+        {blog.comments.length > 0 ? 'hello': 'No Comments'}
       </div>
 
-      
-      <div 
-      className={styles.blog_content}>{blog.content}</div>
-      <AuthorCard key={blog.author._id} author={blog.author}/>
     </main>
   );
 }
