@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 import * as blogServices from '../../services/blogService' 
 
 // components
-import MemberCard from '../../components/MemberCard/MemberCard'
+import AuthorCard from '../../components/AuthorCard/AuthorCard'
 
 // css
 import styles from './BlogDetails.module.css'
@@ -40,7 +40,7 @@ const BlogDetails = ({user}) => {
       <div>{blog.author.name}</div>
       <div>{formatDate(blog.createdAt)}</div>
       <div>{blog.content}</div>
-      <MemberCard key={blog.author._id} user={user}member={blog.author}/>
+      <AuthorCard key={blog.author._id} author={blog.author}/>
     </main>
   );
 }
