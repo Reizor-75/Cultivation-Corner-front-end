@@ -1,0 +1,19 @@
+.author_container{
+  display: flex;
+  height: 64px;
+  align-items: center;
+}
+
+.image_container{
+  height: 100%;
+  margin-right: 12px;
+}
+
+.author_photo{
+  height: 100%;
+  border-radius: 50%;
+}
+
+.author_info{
+  font-weight: 600;
+}
