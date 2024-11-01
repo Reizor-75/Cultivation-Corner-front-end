@@ -41,8 +41,23 @@ async function showBlog(blogId) {
   }
 }
 
+async function deleteBlog(blogId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${blogId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export{
   getAllBlogs,
   createBlogPost,
   showBlog,
+  deleteBlog,
 }
