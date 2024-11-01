@@ -11,7 +11,7 @@ import AuthorCard from '../../components/AuthorCard/AuthorCard'
 // css
 import styles from './BlogDetails.module.css'
 
-const BlogDetails = () => {
+const BlogDetails = ({ user }) => {
   const {blogId} = useParams()
   const [blog, setBlog] = useState(null)
 
@@ -37,7 +37,11 @@ const BlogDetails = () => {
     <main className={styles.main_container}>
       <div className={styles.blog_container}>
         <div className={styles.blog_header}>
-          <div className={styles.blog_title}>{blog.title}</div>
+          <div className={styles.blog_title}>{blog.title}
+
+            {user.profile === blog.author._id &&
+            <button className={styles.delete_button}>Delete post</button> }
+          </div>
           <div className={styles.publishDate}> {formatDate(blog.createdAt)}</div>
         </div>      
         <div className={styles.blog_content}> {blog.content}</div>
