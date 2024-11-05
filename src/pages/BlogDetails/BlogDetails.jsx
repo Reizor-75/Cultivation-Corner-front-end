@@ -8,6 +8,7 @@ import * as blogService from '../../services/blogService'
 // components
 import AuthorCard from '../../components/AuthorCard/AuthorCard'
 import NewComment from '../../components/NewComment/NewComment'
+import CommentCard from '../../components/CommentCard/CommentCard'
 
 // css
 import styles from './BlogDetails.module.css'
@@ -59,6 +60,10 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
             Leave a Comment
           </button> }
           <NewComment handleAddComment={handleAddComment}/>
+
+        {blog.comments.map(comment =>(
+            <CommentCard key={comment._id} comment={comment}/>
+          ))}
       </div>
 
     </main>
