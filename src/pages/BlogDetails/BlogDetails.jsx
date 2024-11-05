@@ -24,6 +24,12 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
     fetchBlog()
   },[blogId])
 
+  const handleAddComment = async(formData) => {
+    console.log(formData)
+    const newComment = await blogService.createComment(blog._id, formData)
+    setBlog({ ...blog, comments: [...blog.comments, newComment] })
+  }
+
   const formatDate = (date) => { return new Date(date).toDateString()}
 
   if(!blog)
@@ -52,7 +58,7 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
           <button>
             Leave a Comment
           </button> }
-          <NewComment/>
+          <NewComment handleAddComment={handleAddComment}/>
       </div>
 
     </main>

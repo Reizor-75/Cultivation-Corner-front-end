@@ -14,7 +14,6 @@ const NewComment = ({handleAddComment}) => {
   const handleSubmit = (evt) => {
     evt.preventDefault()
     handleAddComment(formData)
-    setFormData({ title: '', content: '' })
   }
   
   return ( 
