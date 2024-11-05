@@ -16,6 +16,7 @@ const NewComment = ({handleAddComment}) => {
     handleAddComment(formData)
     setFormData({ title: '', content: '' })
   }
+  
   return ( 
     <form className={styles.new_comment_container} onSubmit={handleSubmit}>
       <input

@@ -58,7 +58,6 @@ function App() {
     const deleteBlog = await blogService.deleteBlog(blogId)
     setBlogs(blogs.filter((b) => b._id !== deleteBlog._id))
     navigate('/blogs')
-    console.log("boop")
   }
 
   return (
