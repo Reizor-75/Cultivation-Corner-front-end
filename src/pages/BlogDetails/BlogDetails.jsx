@@ -47,6 +47,10 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
       </div>
       <div className={styles.commment_container}>
         {blog.comments.length > 0 ? 'hello': 'No Comments'}
+        {user && 
+          <button>
+            Leave a Comment
+          </button> }
       </div>
 
     </main>
