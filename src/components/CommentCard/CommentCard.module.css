@@ -1,0 +1,14 @@
+.comment_container{
+  padding-top: 16px;
+}
+
+.comment_title{
+  font-size: var(--font-l);
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
+.comment_content{
+  font-size: var(--font-s);
+  padding-bottom: 8px;
+}
