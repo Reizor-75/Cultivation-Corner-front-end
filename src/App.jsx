@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -25,13 +25,24 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as blogService from './services/blogService'
 
 // styles
 import './App.css'
 
 function App() {
-  const [user, setUser] = useState(authService.getUser())
+  const [user, setUser] = useState(authService.getUser())  
+  const [blogs, setBlogs] = useState([])
   const navigate = useNavigate()
+
+
+  useEffect(()=>{
+    const fetchBlogs = async () => {
+      const blogsData = await blogService.getAllBlogs()
+      setBlogs(blogsData)
+    }
+    fetchBlogs()
+  }, [])
 
   const handleLogout = () => {
     authService.logout()
@@ -41,6 +52,13 @@ function App() {
 
   const handleAuthEvt = () => {
     setUser(authService.getUser())
+  }
+
+  const handleDeleteBlog = async (blogId) => {
+    const deleteBlog = await blogService.deleteBlog(blogId)
+    setBlogs(blogs.filter((b) => b._id !== deleteBlog._id))
+    navigate('/blogs')
+    console.log("boop")
   }
 
   return (
@@ -98,7 +116,10 @@ function App() {
         />
         <Route
           path="/Blogs"
-          element={ <Blogs user={user}/> }
+          element={ <Blogs 
+            user={user}
+            blogs={blogs}
+            handleDeleteBlog={handleDeleteBlog}/> }
         />
         <Route
           path="/Blogs/:blogId"

@@ -1,27 +1,13 @@
 // npm modules
-import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-
-// service
-import * as blogService from '../../services/blogService'
+import { NavLink} from 'react-router-dom';
 
 // componenets
 import BlogCard from '../../components/BlogCard/BlogCard';
 // css
 import styles from './Blogs.module.css'
 
-const Blogs = ({ user }) => {
-  const [blogs, setBlog] = useState([])
+const Blogs = ({ user, blogs, handleDeleteBlog }) => {
 
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      const blogsData = await blogService.getAllBlogs()
-      setBlog(blogsData)
-    }
-    fetchBlogs()
-  }, [])
-
-  console.log(blogs)
   return (  
     <main className={styles.main_container}>
       {/* <h1>Blog</h1> */}
@@ -34,7 +20,9 @@ const Blogs = ({ user }) => {
           "No Blogs Available"
         :
           blogs.map(blog =>(
-            <BlogCard key={blog._id} blog={blog}/>
+            <BlogCard key={blog._id} 
+              blog={blog} 
+              handleDeleteBlog={handleDeleteBlog}/>
           ))
         }
       </div>

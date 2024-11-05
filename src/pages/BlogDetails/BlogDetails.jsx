@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 //services
-import * as blogServices from '../../services/blogService' 
+import * as blogService from '../../services/blogService' 
 
 // components
 import AuthorCard from '../../components/AuthorCard/AuthorCard'
@@ -11,19 +11,17 @@ import AuthorCard from '../../components/AuthorCard/AuthorCard'
 // css
 import styles from './BlogDetails.module.css'
 
-const BlogDetails = ({ user }) => {
+const BlogDetails = ({ user, handleDeleteBlog }) => {
   const {blogId} = useParams()
   const [blog, setBlog] = useState(null)
 
   useEffect(()=>{
-
     const fetchBlog = async () => {
-      const data = await blogServices.showBlog(blogId)
+      const data = await blogService.showBlog(blogId)
       setBlog(data)
     }
     fetchBlog()
   },[blogId])
-
 
   const formatDate = (date) => { return new Date(date).toDateString()}
 
@@ -39,8 +37,8 @@ const BlogDetails = ({ user }) => {
         <div className={styles.blog_header}>
           <div className={styles.blog_title}>{blog.title}
 
-            {user.profile === blog.author._id &&
-            <button className={styles.delete_button}>Delete post</button> }
+            {user?.profile === blog.author._id &&
+            <button onClick={()=> handleDeleteBlog(blogId)} className={styles.delete_button}>Delete post</button> }
           </div>
           <div className={styles.publishDate}> {formatDate(blog.createdAt)}</div>
         </div>      
