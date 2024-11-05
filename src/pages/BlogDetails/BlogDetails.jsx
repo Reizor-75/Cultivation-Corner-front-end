@@ -7,6 +7,7 @@ import * as blogService from '../../services/blogService'
 
 // components
 import AuthorCard from '../../components/AuthorCard/AuthorCard'
+import NewComment from '../../components/NewComment/NewComment'
 
 // css
 import styles from './BlogDetails.module.css'
@@ -51,6 +52,7 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
           <button>
             Leave a Comment
           </button> }
+          <NewComment/>
       </div>
 
     </main>
