@@ -54,14 +54,16 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
         <AuthorCard key={blog.author_id} author={blog.author}/>
       </div>
       <div className={styles.commment_container}>
+        <h1>Comments
+          {user && <button>Leave a Comment</button> }
+        </h1>
+        <NewComment handleAddComment={handleAddComment}/>
+
+
         {blog.comments.length <= 0 ? 
-            <h1>No Comments</h1>
+            <h1>No Comments available</h1>
           :
             <>
-              <h1>Comments
-                {user && <button>Leave a Comment</button> }
-              </h1>
-              <NewComment handleAddComment={handleAddComment}/>
 
               {blog.comments.map(comment =>(
                   <CommentCard key={comment._id} comment={comment}/>
