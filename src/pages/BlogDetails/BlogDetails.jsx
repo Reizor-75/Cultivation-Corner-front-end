@@ -52,7 +52,12 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
           <div className={styles.blog_title}>{blog.title}
 
             {user?.profile === blog.author._id &&
-            <button onClick={()=> handleDeleteBlog(blogId)} className={styles.delete_button}>Delete post</button> }
+
+            <>
+              <button className={`${styles.user_button} ${styles.edit_button}`}>Edit</button> 
+              <button className={`${styles.user_button} ${styles.delete_button}`} onClick={()=> handleDeleteBlog(blogId)}>Delete post</button> 
+            </>
+          }
           </div>
           <div className={styles.publishDate}> {formatDate(blog.createdAt)}</div>
         </div>      
