@@ -60,14 +60,6 @@ function App() {
     navigate('/blogs')
   }
 
-  const handleDeleteComment = async (blogId, commentId) => {
-    const updatedBlog = blogs.find(blog => blog._id === blogId)    
-    await blogService.deleteComment(blogId, commentId)
-    setBlogs(blogs.map((blog) => updatedBlog._id === blog._id ?
-    {...blogs.find(blog => blog._id === blogId), comments: updatedBlog.comments.filter((comment) => comment._id !== commentId)}
-    :blog))
-    navigate(`/blogs`)
-  }
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -133,7 +125,6 @@ function App() {
           element={ <BlogDetails 
             user={user}          
             handleDeleteBlog={handleDeleteBlog}
-            handleDeleteComment={handleDeleteComment}
           /> }
         />
         <Route
