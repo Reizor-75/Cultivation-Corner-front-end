@@ -13,7 +13,7 @@ import CommentCard from '../../components/CommentCard/CommentCard'
 // css
 import styles from './BlogDetails.module.css'
 
-const BlogDetails = ({ user, handleDeleteBlog }) => {
+const BlogDetails = ({ user, handleDeleteBlog, handleDeleteComment }) => {
   const {blogId} = useParams()
   const [blog, setBlog] = useState(null)
 
@@ -28,6 +28,10 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
   const handleAddComment = async(formData) => {
     const newComment = await blogService.createComment(blog._id, formData)
     setBlog({ ...blog, comments: [...blog.comments, newComment] })
+  }
+  
+  const deleteComment = async(commentId) =>{
+    handleDeleteComment(blog._id, commentId)
   }
 
   const formatDate = (date) => { return new Date(date).toDateString()}
@@ -65,7 +69,8 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
             <>
 
               {blog.comments.map(comment =>(
-                  <CommentCard key={comment._id} comment={comment}/>
+                  <CommentCard key={comment._id} comment={comment}
+                  deleteComment={deleteComment}/>
                 ))}
             </>
         }
