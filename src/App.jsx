@@ -126,13 +126,15 @@ function App() {
           element={ <Blogs 
             user={user}
             blogs={blogs}
-            handleDeleteBlog={handleDeleteBlog}
-            handleDeleteComment={handleDeleteComment}
           /> }
         />
         <Route
           path="/Blogs/:blogId"
-          element={ <BlogDetails user={user}/> }
+          element={ <BlogDetails 
+            user={user}          
+            handleDeleteBlog={handleDeleteBlog}
+            handleDeleteComment={handleDeleteComment}
+          /> }
         />
         <Route
           path="/Blogs/newBlog"
