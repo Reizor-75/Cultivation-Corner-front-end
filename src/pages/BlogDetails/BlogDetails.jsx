@@ -51,19 +51,23 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
           <div className={styles.publishDate}> {formatDate(blog.createdAt)}</div>
         </div>      
         <div className={styles.blog_content}> {blog.content}</div>
-        <AuthorCard key={blog.author._id} author={blog.author}/>
+        <AuthorCard key={blog.author_id} author={blog.author}/>
       </div>
       <div className={styles.commment_container}>
-        {blog.comments.length > 0 ? 'hello': 'No Comments'}
-        {user && 
-          <button>
-            Leave a Comment
-          </button> }
-          <NewComment handleAddComment={handleAddComment}/>
+        {blog.comments.length <= 0 ? 
+            <h1>No Comments</h1>
+          :
+            <>
+              <h1>Comments
+                {user && <button>Leave a Comment</button> }
+              </h1>
+              <NewComment handleAddComment={handleAddComment}/>
 
-        {blog.comments.map(comment =>(
-            <CommentCard key={comment._id} comment={comment}/>
-          ))}
+              {blog.comments.map(comment =>(
+                  <CommentCard key={comment._id} comment={comment}/>
+                ))}
+            </>
+        }
       </div>
 
     </main>
