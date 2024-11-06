@@ -1,4 +1,5 @@
 .comment_container{
+  width: 100%;
   padding-top: 16px;
 }
 
@@ -11,4 +12,13 @@
 .comment_content{
   font-size: var(--font-s);
   padding-bottom: 8px;
+}
+
+.top_row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete_button{
+  height: fit-content;
 }
