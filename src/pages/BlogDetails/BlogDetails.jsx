@@ -26,7 +26,6 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
   },[blogId])
 
   const handleAddComment = async(formData) => {
-    console.log(formData)
     const newComment = await blogService.createComment(blog._id, formData)
     setBlog({ ...blog, comments: [...blog.comments, newComment] })
   }
@@ -53,7 +52,7 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
         <div className={styles.blog_content}> {blog.content}</div>
         <AuthorCard key={blog.author_id} author={blog.author}/>
       </div>
-      <div className={styles.commment_container}>
+      <div className={styles.comment_container}>
         <h1>Comments
           {user && <button>Leave a Comment</button> }
         </h1>

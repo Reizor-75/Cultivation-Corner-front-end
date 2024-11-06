@@ -14,6 +14,8 @@ const NewComment = ({handleAddComment}) => {
   const handleSubmit = (evt) => {
     evt.preventDefault()
     handleAddComment(formData)
+    formData.title = ''
+    formData.content = '' /// react hook is anger at this form clear
   }
   
   return ( 
