@@ -22,7 +22,7 @@ nav{
   height: fit-content;
   display: flex;
   justify-content: right;
-  font-weight: 600;
+  font-weight: 700;
   a{
     opacity: .75;
     margin: 8px;
