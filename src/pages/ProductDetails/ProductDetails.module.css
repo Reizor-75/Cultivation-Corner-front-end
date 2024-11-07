@@ -17,6 +17,16 @@
   overflow: hidden;
 }
 
-.product_info{
+.product_info{  
   width: 50%;
+}
+
+.product_name{
+  font-family: var(--font-header);
+  text-transform: uppercase;
+}
+
+.product_description{
+  font-family: var(--font-text);
+  letter-spacing: .01rem;
 }

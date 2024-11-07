@@ -11,12 +11,14 @@
 }
 
 .blog_title{
+  font-family: var(--font-header);
   font-size: var(--font-xl);
 }
 
 .blog_content{
-  font-size: var(--font-m);
-  font-weight: 600;
+  font-family: var(--font-text);
+  font-size: var(--font-s);
+  letter-spacing: .01rem;
   padding: 24px 0;
 }
 

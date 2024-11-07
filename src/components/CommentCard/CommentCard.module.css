@@ -10,7 +10,9 @@
 }
 
 .comment_content{
+  font-family: var(--font-text);
   font-size: var(--font-s);
+  letter-spacing: .01rem;
   padding-bottom: 8px;
 }
 

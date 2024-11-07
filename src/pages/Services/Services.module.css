@@ -1,4 +1,11 @@
 .services_container{
   width: 60vw;
-  min-width: 800px;
+  min-width: 800px;  
+  font-family: var(--font-text);
+  letter-spacing: .01rem;
+}
+
+
+.header{
+  font-family: var(--font-header);
 }

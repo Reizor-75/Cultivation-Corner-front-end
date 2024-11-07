@@ -42,7 +42,7 @@ const ProductDetails = ({user}) => {
         <div className={styles.image_container}>
           <img className={styles.product_photo} src={productImage} alt="Product photo" /></div>
         <div className={styles.product_info}>
-          <h1 className={styles.product_Name}>    
+          <h1 className={styles.product_name}>    
             {product.name}
             
             {user?.role >= 500 && <Link to={`/shop/edit/${product._id}`} state={product}><button>Edit</button></Link>     }

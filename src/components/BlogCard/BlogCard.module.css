@@ -13,7 +13,9 @@
   height: 220px;
 }
 
-.blog_title{
+.blog_title{  
+  font-family: var(--font-header);
+  text-transform: uppercase;
   font-size: var(--font-m);
   font-weight: 600;
   padding: 0 8px;
@@ -30,6 +32,8 @@
   max-height: 2.6em;
   line-height: 1.3em;
   padding: 0 8px;
+  font-family: var(--font-text);
+  letter-spacing: .01rem ;
 }
 
 .read_more{
