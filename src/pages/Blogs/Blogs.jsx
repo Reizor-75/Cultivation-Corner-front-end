@@ -12,7 +12,7 @@ const Blogs = ({ user, blogs, handleDeleteBlog }) => {
     <main className={styles.main_container}>
       {/* <h1>Blog</h1> */}
       { user?.role >= 500 && 
-        <NavLink to="/blogs/newBlog"> <button>New Blog Post</button> </NavLink>
+        <NavLink to="/blogs/newBlog"> <button><i className="fa-solid fa-plus"></i></button> </NavLink>
       }
       <div className={styles.recent_blog}></div>
       <div className={styles.blog_container}>

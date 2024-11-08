@@ -21,13 +21,14 @@ nav{
   display: flex;
   justify-content: right;
   align-items: center;
-  width: 640px;
+  /* width: 640px; */
   height: fit-content;
   font-weight: 700;
 }
 
 .navigation_links{
   font-size: var(--font-m);
+  white-space:nowrap;
   a{
     opacity: .75;
     margin: 8px;
@@ -59,6 +60,7 @@ hr{
   box-shadow: 2px 2px 4px #00000066;
   padding: 8px 16px;
   margin-right: 8px;
+  white-space:nowrap;
 }
 
 .user_link:hover{

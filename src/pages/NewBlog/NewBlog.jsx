@@ -37,40 +37,37 @@ const NewBlog = ({user}) => {
 
   return ( 
     <main className={styles.main_container}>
-      <h1>New Blog</h1>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Post Title
+      <div className={styles.newBlog_container}>
+        <h1>New Blog</h1>
+        <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
           <input
             type="text"
             value={title}
             name="title"
+            className={styles.input}
+            placeholder='Post Title'
             onChange={handleChange}
             required
           />
-        </label>
-        <label className={styles.label}>
-          Products
           <input
-              type="text"
-              value={productList}
-              name="productList"
-              onChange={handleChange}
-
-            />
-        </label>
-        <label className={styles.label}>
-          Content
+            type="text"
+            value={productList}
+            name="productList"
+            className={styles.input}
+            placeholder='Products Feature'
+            onChange={handleChange}
+          />
           <textarea
             type="text"
             value={content}
             name="content"
+            placeholder='Fill in'
             onChange={handleChange}
             required
           />
-        </label>
-        <button className={styles.button}>Submit Post</button>
-      </form>
+          <button className={styles.button}>Submit Post</button>
+        </form>
+      </div>
     </main>
   );
 }
