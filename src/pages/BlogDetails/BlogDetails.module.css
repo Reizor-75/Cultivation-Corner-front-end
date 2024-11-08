@@ -11,8 +11,11 @@
 }
 
 .blog_title{
+  display: flex;
+  justify-content: space-between;
   font-family: var(--font-header);
   font-size: var(--font-xl);
+  text-transform: uppercase;  
 }
 
 .blog_content{
@@ -22,6 +25,12 @@
   padding: 24px 0;
 }
 
-.user_button{
-  margin: 0 4px;
+.user_buttons{
+  display: flex;
+  color: var(--accent-color);
+  margin: 0 12px;
+}
+
+.user_buttons>:hover{
+  color: var(--main-color);
 }

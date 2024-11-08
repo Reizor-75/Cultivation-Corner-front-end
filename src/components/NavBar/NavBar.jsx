@@ -15,23 +15,25 @@ const NavBar = ({ user, handleLogout }) => {
             <li><NavLink to="/auth/change-password">Change Password</NavLink></li>
              */}
           </ul>
-        <div className={styles.navigation_links}>
-          <NavLink className={styles.reg_links} to="/AboutUs">ABOUT US</NavLink>
-          <NavLink className={styles.reg_links} to="/Shop">SHOP</NavLink>
-          <NavLink className={styles.reg_links} to="/Services">SERVICES</NavLink>
-          <NavLink className={styles.reg_links} to="/Blogs">BLOG</NavLink>
-            {user ?
-              <>               
-                <NavLink className={styles.user_link} to={`/profiles/${user.profile}`}> PROFILE</NavLink>
-                {/* <NavLink className={styles.user_link} to="/auth/change-password">Change Password</NavLink> */}
-                <NavLink className={styles.user_link} to="" onClick={handleLogout}>LOG OUT</NavLink>
-              </>
-              :
-              <>    
-                <NavLink className={styles.user_link} to="/auth/signup">SIGN UP</NavLink>
-                <NavLink className={styles.user_link} to="/auth/login">LOG IN</NavLink>
-              </>
-            }
+        <div className={styles.link_container}>
+          <div className={styles.navigation_links}>
+            <NavLink className={styles.reg_links} to="/AboutUs">ABOUT US</NavLink>
+            <NavLink className={styles.reg_links} to="/Shop">SHOP</NavLink>
+            <NavLink className={styles.reg_links} to="/Services">SERVICES</NavLink>
+            <NavLink className={styles.reg_links} to="/Blogs">BLOG</NavLink>
+          </div>
+          {user ?
+            <>               
+              <NavLink className={styles.user_link} to={`/profiles/${user.profile}`}> PROFILE</NavLink>
+              {/* <NavLink className={styles.user_link} to="/auth/change-password">Change Password</NavLink> */}
+              <NavLink className={styles.user_link} to="" onClick={handleLogout}>LOG OUT</NavLink>
+            </>
+            :
+            <>    
+              <NavLink className={styles.user_link} to="/auth/signup">SIGN UP</NavLink>
+              <NavLink className={styles.user_link} to="/auth/login">LOG IN</NavLink>
+            </>
+          }
         </div>        
       </div>
       {/* <hr /> */}

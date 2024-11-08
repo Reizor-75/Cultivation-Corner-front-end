@@ -7,6 +7,7 @@
   font-size: var(--font-l);
   font-weight: 600;
   padding-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .comment_content{
@@ -23,4 +24,8 @@
 
 .delete_button{
   height: fit-content;
+  font-size: var(--font-m);
+  color: var(--main-color);
+  background-color: var(--background-color);
+  box-shadow: none;
 }

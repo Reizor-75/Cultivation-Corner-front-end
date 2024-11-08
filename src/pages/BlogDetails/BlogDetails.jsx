@@ -16,6 +16,7 @@ import styles from './BlogDetails.module.css'
 const BlogDetails = ({ user, handleDeleteBlog }) => {
   const {blogId} = useParams()
   const [blog, setBlog] = useState(null)
+  const [showAdd, setShowAdd] = useState(false)
 
   useEffect(()=>{
     const fetchBlog = async () => {
@@ -33,9 +34,11 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
   const handleDeleteComment = async (commentId) => {
     await blogService.deleteComment(blog._id, commentId)
     setBlog({...blog, comments: blog.comments.filter((comment) => comment._id !== commentId)})
-    // navigate(`/blogs/${blogId}`)
   }
 
+  const toggleAddComment = () =>{
+    setShowAdd(!showAdd)
+  }
 
   const formatDate = (date) => { return new Date(date).toDateString()}
 
@@ -49,15 +52,14 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
     <main className={styles.main_container}>
       <div className={styles.blog_container}>
         <div className={styles.blog_header}>
-          <div className={styles.blog_title}>{blog.title}
-
+          <div className={styles.blog_title}>
+            {blog.title}
             {user?.profile === blog.author._id &&
-
-            <>
-              <button className={`${styles.user_button} ${styles.edit_button}`}>Edit</button> 
-              <button className={`${styles.user_button} ${styles.delete_button}`} onClick={()=> handleDeleteBlog(blogId)}>Delete post</button> 
-            </>
-          }
+              <div className={styles.user_buttons}>
+                <div className= {styles.edit_button}><i className="fa-solid fa-pen-to-square"></i></div> 
+                <div className={styles.delete_button} onClick={()=> handleDeleteBlog(blogId)}><i className="fa-solid fa-eraser"></i></div> 
+              </div>
+            }
           </div>
           <div className={styles.publishDate}> {formatDate(blog.createdAt)}</div>
         </div>      
@@ -65,10 +67,10 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
         <AuthorCard key={blog.author_id} author={blog.author}/>
       </div>
       <div className={styles.comment_container}>
-        <h1>Comments
-          {user && <button>Leave a Comment</button> }
+        <h1>COMMENTS
+          {user && <button onClick={toggleAddComment}><i className="fa-solid fa-message"></i></button> }
         </h1>
-        <NewComment handleAddComment={handleAddComment}/>
+        {showAdd && <NewComment handleAddComment={handleAddComment}/>}
 
 
         {blog.comments.length <= 0 ? 

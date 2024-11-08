@@ -37,7 +37,7 @@ const NewComment = ({handleAddComment}) => {
           onChange={handleChange}
           className={styles.content}
         />      
-        <button type="submit" className={styles.submit_button}>Submit</button>
+        <button type="submit" className={styles.submit_button}><i className="fa-solid fa-arrow-up-right-from-square"></i></button>
     </form> 
   );
 }
