@@ -9,7 +9,7 @@ import * as blogService from '../../services/blogService'
 import AuthorCard from '../../components/AuthorCard/AuthorCard'
 import NewComment from '../../components/NewComment/NewComment'
 import CommentCard from '../../components/CommentCard/CommentCard'
-import ProductCard from '../../components/ProductCard/ProductCard'
+import MiniProductCard from '../../components/MiniProductCard/MiniProductCard'
 
 // css
 import styles from './BlogDetails.module.css'
@@ -66,13 +66,15 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
         </div>      
         <div className={styles.blog_content}> 
           {blog.content}</div>
+          
+        <AuthorCard key={blog.author_id} author={blog.author}/>
+        
+        <h2>Feature Products</h2>
         <div className={styles.feature_products_container}>
-          <h2>Feature Products</h2>
         {blog.productList.map(product => (
-            <ProductCard key={product._id} product={product}/>
+            <MiniProductCard key={product._id} product={product}/>
           ))}
         </div>
-        <AuthorCard key={blog.author_id} author={blog.author}/>
       </div>
       <div className={styles.comment_container}>
         <h1>COMMENTS
