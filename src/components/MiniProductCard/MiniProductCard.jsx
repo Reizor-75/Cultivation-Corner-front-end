@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import styles from './MiniProductCard.module.css'
 
-const MiniProductCard = ({product}) => {  
+const MiniProductCard = ({product, link}) => {  
   let productImage = ''
 
   if (product.photo) productImage = product.photo
@@ -12,16 +12,29 @@ const MiniProductCard = ({product}) => {
   else if(product.productType === 'planter') productImage = 'https://cdn.pixabay.com/photo/2024/03/24/18/32/cat-8653647_1280.png'
   else if(product.productType === 'tool') productImage = 'https://cdn.pixabay.com/photo/2020/01/04/06/29/gardening-4739846_1280.png'
 
-  return (
-    <NavLink to={`/Shop/${product._id}`}>
-      <div className={styles.product_container}> 
-        <div className={styles.image_container}>             
-          <img className= {styles.product_image} src={productImage} alt="Product image"/>
+  if(link){
+    return(
+      <NavLink to={`/Shop/${product._id}`}>
+        <div className={styles.product_container}> 
+          <div className={styles.image_container}>             
+            <img className= {styles.product_image} src={productImage} alt="Product image"/>
+          </div>
+          <div className={styles.product_info}>
+            <p className={styles.title}>{product.name ?product.name : "Not Availible" }</p>
+          </div> 
         </div>
-        <div className={styles.product_info}>
-          <p className={styles.title}>{product.name ?product.name : "Not Availible" }</p>
-        </div> 
-      </div>
-    </NavLink>
+      </NavLink>
   )}
+  
+  return(
+    <div className={styles.product_container}> 
+      <div className={styles.image_container}>             
+        <img className= {styles.product_image} src={productImage} alt="Product image"/>
+      </div>
+      <div className={styles.product_info}>
+        <p className={styles.title}>{product.name ?product.name : "Not Availible" }</p>
+      </div> 
+    </div>
+  )
+}
 export default MiniProductCard;

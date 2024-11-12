@@ -7,7 +7,7 @@ import * as blogService from '../../services/blogService'
 import * as productService from '../../services/productService'
 
 // components
-import ProductCard from '../../components/ProductCard/ProductCard'
+import MiniProductCard from '../../components/MiniProductCard/MiniProductCard'
 
 // css
 import styles from './NewBlog.module.css'
@@ -35,14 +35,17 @@ const NewBlog = ({user}) => {
   })
 
   const handleOptionChange = evt =>{
-    console.log(evt.target.value)
-
     const fetchProduct = async ()=> {
       const data = await productService.showProduct(evt.target.value)    
       setFormData({productList: [...formData.productList, data]})
       setProducts(products.filter((p) => p._id !== data._id))
     }
     fetchProduct() 
+  }
+
+  const handleRemoveOption = (product) => {
+    setProducts([...products, product])    
+    setFormData({productList: formData.productList.filter((p) => p._id !== product._id)})
   }
 
   const handleChange = evt => {
@@ -69,7 +72,10 @@ const NewBlog = ({user}) => {
           :
             <div className={styles.product_container}>
               {productList.map(product =>(
-                <ProductCard key={product._id} product={product} />
+                <div className={styles.product_container} key={product._id}
+                onClick={()=>handleRemoveOption(product)} >
+                  <MiniProductCard product={product} link={false}/>
+                </div>
               ))}
             </div>
           }
