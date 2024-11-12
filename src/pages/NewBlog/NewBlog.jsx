@@ -63,23 +63,10 @@ const NewBlog = ({user}) => {
   return ( 
     <main className={styles.main_container}>
       <div className={styles.newBlog_container}>
-        <h1>New Blog</h1>
+        <h1>New Blog
+          <button className={styles.button}>Submit Post</button>
+        </h1>
         <img src="" alt="Uploaded Cover Image" className={styles.cover_Image} />
-
-        <div className={styles.featured_products}>
-          {productList?.length === 0 ? 
-            "No Products Feature"
-          :
-            <div className={styles.product_container}>
-              {productList.map(product =>(
-                <div className={styles.product_container} key={product._id}
-                onClick={()=>handleRemoveOption(product)} >
-                  <MiniProductCard product={product} link={false}/>
-                </div>
-              ))}
-            </div>
-          }
-        </div>
 
         <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
           <input
@@ -88,6 +75,14 @@ const NewBlog = ({user}) => {
             name="title"
             className={styles.input}
             placeholder='Post Title'
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            type="text"
+            value={content}
+            name="content"
+            placeholder='Fill in'
             onChange={handleChange}
             required
           />
@@ -104,15 +99,22 @@ const NewBlog = ({user}) => {
               <option key={product._id} value={product._id}> {product.name}</option>
             )}
           </select>
-          <textarea
-            type="text"
-            value={content}
-            name="content"
-            placeholder='Fill in'
-            onChange={handleChange}
-            required
-          />
-          <button className={styles.button}>Submit Post</button>
+        <div className={styles.featured_products}>
+            <h2>Featured Products</h2>
+          {productList?.length === 0 ? 
+            "No Products Feature"
+          :
+            <div className={styles.product_container}>
+              {productList.map(product =>(
+                <div className={styles.product} key={product._id}
+                onClick={()=>handleRemoveOption(product)} >
+                  <MiniProductCard product={product} link={false}/>
+                  <i className="fa-solid fa-ban"></i>
+                </div>
+              ))}
+            </div>
+          }
+        </div>
         </form>
       </div>
     </main>
