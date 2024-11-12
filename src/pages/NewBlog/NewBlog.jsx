@@ -8,6 +8,7 @@ import * as productService from '../../services/productService'
 
 // components
 import ProductCard from '../../components/ProductCard/ProductCard'
+
 // css
 import styles from './NewBlog.module.css'
 
@@ -33,6 +34,17 @@ const NewBlog = ({user}) => {
     productList: [],
   })
 
+  const handleOptionChange = evt =>{
+    console.log(evt.target.value)
+
+    const fetchProduct = async ()=> {
+      const data = await productService.showProduct(evt.target.value)    
+      setFormData({productList: [...formData.productList, data]})
+      setProducts(products.filter((p) => p._id !== data._id))
+    }
+    fetchProduct() 
+  }
+
   const handleChange = evt => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
@@ -52,7 +64,7 @@ const NewBlog = ({user}) => {
         <img src="" alt="Uploaded Cover Image" className={styles.cover_Image} />
 
         <div className={styles.featured_products}>
-          {productList.length ===0 ? 
+          {productList?.length === 0 ? 
             "No Products Feature"
           :
             <div className={styles.product_container}>
@@ -73,14 +85,19 @@ const NewBlog = ({user}) => {
             onChange={handleChange}
             required
           />
-          <input
+          <select
             type="text"
-            value={productList}
             name="productList"
+            // value={products}
             className={styles.input}
             placeholder='Products Feature'
-            onChange={handleChange}
-          />
+            onChange={handleOptionChange}
+            multiple
+          >
+            {products.map((product) => 
+              <option key={product._id} value={product._id}> {product.name}</option>
+            )}
+          </select>
           <textarea
             type="text"
             value={content}
