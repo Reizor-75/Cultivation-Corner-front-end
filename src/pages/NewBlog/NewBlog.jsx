@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 // services
 import * as blogService from '../../services/blogService'
 
+// components
+import ProductCard from '../../components/ProductCard/ProductCard'
 // css
 import styles from './NewBlog.module.css'
 
@@ -39,6 +41,20 @@ const NewBlog = ({user}) => {
     <main className={styles.main_container}>
       <div className={styles.newBlog_container}>
         <h1>New Blog</h1>
+        <img src="" alt="Uploaded Cover Image" className={styles.cover_Image} />
+
+        <div className={styles.featured_products}>
+          {productList.length ===0 ? 
+            "No Products Feature"
+          :
+            <div className={styles.product_container}>
+              {productList.map(product =>(
+                <ProductCard key={product._id} product={product} />
+              ))}
+            </div>
+          }
+        </div>
+
         <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
           <input
             type="text"
