@@ -72,7 +72,7 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
         <h2>Feature Products</h2>
         <div className={styles.feature_products_container}>
         {blog.productList.map(product => (
-            <MiniProductCard key={product._id} product={product}/>
+            <MiniProductCard key={product._id} product={product} link={true}/>
           ))}
         </div>
       </div>
