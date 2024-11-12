@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 // services
 import * as blogService from '../../services/blogService'
+import * as productService from '../../services/productService'
 
 // components
 import ProductCard from '../../components/ProductCard/ProductCard'
@@ -11,12 +12,19 @@ import ProductCard from '../../components/ProductCard/ProductCard'
 import styles from './NewBlog.module.css'
 
 const NewBlog = ({user}) => {
+  const [products, setProducts] = useState([])
   const navigate = useNavigate()
 
   useEffect(() =>{
     if(!user || user.role <500){
       navigate("/")
     }
+
+    const fetchProducts= async () => {
+      const data = await productService.getAllProducts()
+      setProducts(data)
+    }
+    fetchProducts()
   }, [user, navigate])
 
   const [formData, setFormData] = useState({
