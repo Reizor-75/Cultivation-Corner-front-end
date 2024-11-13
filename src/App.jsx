@@ -18,6 +18,7 @@ import Services from './pages/Services/Services'
 import Blogs from './pages/Blogs/Blogs'
 import NewBlog from './pages/NewBlog/NewBlog'
 import BlogDetails from './pages/BlogDetails/BlogDetails'
+import EditBlog from './pages/EditBlog/EditBlog'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -130,6 +131,10 @@ function App() {
         <Route
           path="/Blogs/newBlog"
           element={ <NewBlog user={user}/> }
+        />        
+        <Route
+          path="/Blogs/Edit/:blogId"
+          element={ <EditBlog user={user}/> }
         />
       </Routes>
     </>
