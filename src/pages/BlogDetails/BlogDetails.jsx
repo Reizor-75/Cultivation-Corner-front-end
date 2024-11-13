@@ -1,6 +1,6 @@
 // npm modules
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 //services
 import * as blogService from '../../services/blogService' 
@@ -57,7 +57,7 @@ const BlogDetails = ({ user, handleDeleteBlog }) => {
             {blog.title}
             {user?.profile === blog.author._id &&
               <div className={styles.user_buttons}>
-                <div className= {styles.edit_button}><i className="fa-solid fa-pen-to-square"></i></div> 
+                <Link to={`/blogs/Edit/${blog._id}`} state={blog} className= {styles.edit_button}><i className="fa-solid fa-pen-to-square"></i></Link> 
                 <div className={styles.delete_button} onClick={()=> handleDeleteBlog(blogId)}><i className="fa-solid fa-eraser"></i></div> 
               </div>
             }
