@@ -85,11 +85,28 @@ async function deleteComment(blogId, commentId){
   }
 }
 
+async function updateBlog(formData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${formData._id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 export{
   getAllBlogs,
   createBlogPost,
   showBlog,
   deleteBlog,
   createComment,
-  deleteComment
+  deleteComment,
+  updateBlog
 }
