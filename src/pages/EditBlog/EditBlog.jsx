@@ -48,14 +48,16 @@ const EditBlog = () => {
 
   const handleSubmit = async evt => {
     evt.preventDefault()
-    await blogService.createBlogPost(formData)
     navigate('/blogs')
   }
 
   const { title, content, productList } = formData
   return (
     <main className={styles.edit_blog_container}>
-      <h1>Edit Blog Post</h1>
+      <h1>Edit Blog Post
+        
+      <button>Submit</button>
+      </h1>
       
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
           <input
@@ -104,7 +106,7 @@ const EditBlog = () => {
             </div>
           }
         </div>
-        </form>
+      </form>
     </main>
   
   );
