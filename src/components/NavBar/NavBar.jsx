@@ -9,12 +9,6 @@ const NavBar = ({ user, handleLogout }) => {
     <nav>
       <div className={styles.nav_container}>
         <div className={styles.site_Title}> <NavLink to="/">CULTIVATION CORNER</NavLink></div>
-          <ul>
-            {/* <li>Welcome, {user.name}</li> */}
-            {/* <li><NavLink to="/profiles">Profiles</NavLink></li>
-            <li><NavLink to="/auth/change-password">Change Password</NavLink></li>
-             */}
-          </ul>
         <div className={styles.link_container}>
           <div className={styles.navigation_links}>
             <NavLink className={styles.reg_links} to="/AboutUs">ABOUT US</NavLink>

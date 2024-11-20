@@ -8,12 +8,13 @@ const Footer = () => {
   <footer className={styles.footer_container}>
     <div className={styles.quick_links}>
       <h2>Quick Links</h2>
-      <NavLink className={styles.reg_links} to="/">Home</NavLink>
-      <NavLink className={styles.reg_links} to="/AboutUs">About Us</NavLink>
-      <NavLink className={styles.reg_links} to="/Shop">Shop</NavLink>
-      <NavLink className={styles.reg_links} to="/Services">Services</NavLink>
-      <NavLink className={styles.reg_links} to="/Blogs">Blog</NavLink>
-
+      <ul>
+        <NavLink className={styles.reg_links} to="/">Home</NavLink>
+        <NavLink className={styles.reg_links} to="/AboutUs">About Us</NavLink>
+        <NavLink className={styles.reg_links} to="/Shop">Shop</NavLink>
+        <NavLink className={styles.reg_links} to="/Services">Services</NavLink>
+        <NavLink className={styles.reg_links} to="/Blogs">Blog</NavLink>
+      </ul>
       {/* <div className={styles.store_policies}>Store Policies</div> */}
     </div>
     <div className={styles.socials_container}> 
