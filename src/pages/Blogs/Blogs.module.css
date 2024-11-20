@@ -6,6 +6,7 @@
 }
 
 .blog_container{
+  margin-top: 24px;
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
