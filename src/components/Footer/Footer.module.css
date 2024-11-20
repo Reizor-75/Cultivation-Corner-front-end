@@ -1,14 +1,11 @@
 .footer_container{
   display: flex;
+  justify-content: space-between;
   width: 100%;
   background-color: var(--main-color);
-  margin-top: 48px;
-  padding: 24px;
+  margin-top: 72px;
+  padding: 24px 48px;
   color: var(--background-color);
-}
-
-.socials_container{  
-  width: 50%;
 }
 
 .socials{
@@ -30,12 +27,23 @@
   margin-top: 24px;
 }
 
-.mailingList_form{
-  input{
-    margin: 0;
-    margin-right: 12px;
-  }
-  button{
-    background-color: var(--accent-color);
-  }
+.input{
+  border: 0;
+  box-shadow: 4px 4px 8px #00000044;
+  height: 32px;
+  margin: 0;
+}
+
+.input:focus{
+  outline: none;
+  background-color: var(--selected-color);
+  
+  box-shadow: none;
+}
+
+.submit_button{
+  font-weight: 600;
+  /* box-shadow: none; */
+  border-radius: 0 4px 4px 0;
+  background-color: var(--accent-color);
 }

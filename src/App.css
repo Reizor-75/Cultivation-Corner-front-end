@@ -8,6 +8,7 @@
   --main-color: #505c28;
   --background-color: #fefefe;
   --accent-color: #d97e4a;
+  --selected-color: #F2DABD;
   --font-xs: .8em;
   --font-s: 1em;
   --font-m: 1.3em;
@@ -56,17 +57,18 @@ main{
   justify-content: center;
 }
 
+
 button{
   background-color: var(--main-color);
   border-radius: 8px;
   padding: 8px;
   border: none;
   color: var(--background-color);
-  box-shadow: 4px 4px 8px #00000044;
 
 }
 
 button:hover{
   background-color: var(--accent-color);
   box-shadow: none;
+  cursor: pointer; 
 }

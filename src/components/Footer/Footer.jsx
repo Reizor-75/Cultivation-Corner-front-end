@@ -18,8 +18,13 @@ const Footer = () => {
     <div className={styles.mailing_list}>
       <h2>Join Our Mailing List</h2>
       <form action="" className={styles.mailingList_form}>
-        <input type="email" />
-        <button>Submit</button>
+        <input type="Email" 
+            value=''
+            name="Email"
+            placeholder='Enter Your Email'
+            className={styles.input}
+            required/>
+        <button className={styles.submit_button}>Submit</button>
       </form>
     </div>
   </footer> 

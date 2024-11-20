@@ -54,60 +54,60 @@ const EditBlog = () => {
 
   const { title, content, productList } = formData
   return (
-    <main className={styles.edit_blog_container}>
-      <h1>Edit Blog Post
+    <main className={styles.main_container}>
+      <div className={styles.editBlog_container}>
+        <h1>Edit Blog Post</h1>
         
-      </h1>
-      
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-      <button>Submit</button>
-          <input
-            type="text"
-            value={title}
-            name="title"
-            className={styles.input}
-            placeholder={formData.title}
-            onChange={handleChange}
-            required
-          />
-          <textarea
-            type="text"
-            value={content}
-            name="content"
-            placeholder={formData.content}
-            onChange={handleChange}
-            required
-          />
-          <select
-            type="text"
-            name="productList"
-            // value={products}
-            className={styles.input}
-            placeholder='Products Feature'
-            onChange={handleOptionChange}
-            multiple
-          >
-            {products.map((product) => 
-              <option key={product._id} value={product._id}> {product.name}</option>
-            )}
-          </select>
-        <div className={styles.featured_products}>
-            <h2>Featured Products</h2>
-          {productList?.length === 0 ? 
-            "No Products Feature"
-          :
-            <div className={styles.product_container}>
-              {productList?.map(product =>(
-                <div className={styles.product} key={product._id}
-                onClick={()=>handleRemoveOption(product)} >
-                  <MiniProductCard product={product} link={false}/>
-                  <i className="fa-solid fa-ban"></i>
-                </div>
-              ))}
-            </div>
-          }
-        </div>
-      </form>
+        <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
+        <button>Submit</button>
+            <input
+              type="text"
+              value={title}
+              name="title"
+              className={styles.input}
+              placeholder={formData.title}
+              onChange={handleChange}
+              required
+            />
+            <textarea
+              type="text"
+              value={content}
+              name="content"
+              placeholder={formData.content}
+              onChange={handleChange}
+              required
+            />
+            <select
+              type="text"
+              name="productList"
+              // value={products}
+              className={styles.input}
+              placeholder='Products Feature'
+              onChange={handleOptionChange}
+              multiple
+            >
+              {products.map((product) => 
+                <option key={product._id} value={product._id}> {product.name}</option>
+              )}
+            </select>
+          <div className={styles.featured_products}>
+              <h2>Featured Products</h2>
+            {productList?.length === 0 ? 
+              "No Products Feature"
+            :
+              <div className={styles.product_container}>
+                {productList?.map(product =>(
+                  <div className={styles.product} key={product._id}
+                  onClick={()=>handleRemoveOption(product)} >
+                    <MiniProductCard product={product} link={false}/>
+                    <i className="fa-solid fa-ban"></i>
+                  </div>
+                ))}
+              </div>
+            }
+          </div>
+        </form>
+      </div>
     </main>
   
   );

@@ -63,12 +63,11 @@ const NewBlog = ({user}) => {
   return ( 
     <main className={styles.main_container}>
       <div className={styles.newBlog_container}>
-        <h1>New Blog
-          <button className={styles.button}>Submit Post</button>
-        </h1>
+        <h1>New Blog</h1>
         <img src="" alt="Uploaded Cover Image" className={styles.cover_Image} />
 
-        <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
+        <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>          
+          <button className={styles.button}>Submit</button>
           <input
             type="text"
             value={title}
