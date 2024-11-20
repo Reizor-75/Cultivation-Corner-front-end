@@ -17,20 +17,19 @@ const NavBar = ({ user, handleLogout }) => {
             <NavLink className={styles.reg_links} to="/Blogs">BLOG</NavLink>
           </div>
           {user ?
-            <>               
+            <div className={styles.user_links}>          
               <NavLink className={styles.user_link} to={`/profiles/${user.profile}`}> PROFILE</NavLink>
               {/* <NavLink className={styles.user_link} to="/auth/change-password">Change Password</NavLink> */}
               <NavLink className={styles.user_link} to="" onClick={handleLogout}>LOG OUT</NavLink>
-            </>
+            </div>
             :
-            <>    
+            <div className={styles.user_links}>    
               <NavLink className={styles.user_link} to="/auth/signup">SIGN UP</NavLink>
               <NavLink className={styles.user_link} to="/auth/login">LOG IN</NavLink>
-            </>
+            </div>
           }
         </div>        
       </div>
-      {/* <hr /> */}
     </nav>
   )
 }
