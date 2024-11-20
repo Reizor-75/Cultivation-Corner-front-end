@@ -23,6 +23,7 @@ import EditBlog from './pages/EditBlog/EditBlog'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import Footer from './components/Footer/Footer'
 
 // services
 import * as authService from './services/authService'
@@ -136,7 +137,8 @@ function App() {
           path="/Blogs/Edit/:blogId"
           element={ <EditBlog user={user}/> }
         />
-      </Routes>
+      </Routes>      
+      <Footer/>
     </>
   )
 }
