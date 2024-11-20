@@ -6,6 +6,24 @@
   margin-top: 72px;
   padding: 24px 48px;
   color: var(--background-color);
+  position: relative;
+  bottom: 0;
+}
+
+.quick_links{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  a{
+    font-size: var(--font-m);
+    color: var(--background-color);
+    padding-right:  12px;
+  }
+  a:hover{    
+    color: var(--accent-color);
+  }
 }
 
 .socials{
