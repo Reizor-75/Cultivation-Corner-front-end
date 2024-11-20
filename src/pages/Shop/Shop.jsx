@@ -36,7 +36,7 @@ const Shop = ({user}) => {
   }
   return (
     <main>
-      <div className={styles.container}>
+      <div className={styles.main_container}>
         <div className={styles.page_header}>
           {/* <h1>Products</h1> */}
           {user?.role === 900 && 
