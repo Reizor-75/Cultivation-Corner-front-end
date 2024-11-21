@@ -79,7 +79,7 @@ function App() {
         <Route
           path="/profiles/:profileId"
           element={
-            <ProfileDetails/>
+            <ProfileDetails user={user}/>
           }
         />
         <Route
