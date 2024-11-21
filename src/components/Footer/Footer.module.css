@@ -5,6 +5,7 @@
   min-width: fit-content; 
   background-color: var(--main-color);
   margin-top: 72px;
+  padding-bottom: 24px;
   color: var(--background-color);
   position: relative;
   bottom: 0;
@@ -16,7 +17,7 @@
   margin: 0;
   margin-left: 24px;
   a{
-    font-size: var(--font-m);
+    font-size: var(--font-s);
     color: var(--background-color);
     padding-right:  12px;
   }
@@ -45,27 +46,45 @@
 }
 
 .mailing_list{  
+  width: 450px;
   margin-right: 24px;
+  p{
+    
+  font-family: var(--font-text);
+  font-size: var(--font-s);
+  }
+}
+
+.mailingList_form{
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .input{
+  font-family: var(--font-text);
+  width: 100%;
   border: 0;
   box-shadow: 4px 4px 8px #00000044;
-  height: 32px;
+  height: 48px;
   margin: 0;
 }
 
 .input:focus{
-  outline: none;
-  background-color: var(--selected-color);
-  
+  /* outline: none; */
+  background-color: var(--selected-color);  
   box-shadow: none;
 }
 
 .submit_button{
+  width: 100%;
+  height: 48px;
+  box-shadow: 4px 4px 8px #00000044;
+  font-family: var(--font-text);
+  font-size: var(--font-l);
   font-weight: 600;
-  /* box-shadow: none; */
-  border-radius: 0 4px 4px 0;
+  margin-top: 12px;
+  border-radius: 0;
   background-color: var(--accent-color);
 }
 
@@ -73,6 +92,7 @@
   .footer_container{
     display: flex;
     flex-direction: column-reverse;
+    padding: 0 24px;
     margin-top: 72px;
     font-size: var(--font-xs);
     width: 100%;
@@ -87,5 +107,14 @@
       display: flex;
       flex-direction: row;
     }
+  }
+  
+  .mailingList_form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .input {
+    width: 100%;
   }
 }

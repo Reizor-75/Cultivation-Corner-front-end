@@ -29,6 +29,7 @@ const Footer = () => {
     </div>
     <div className={styles.mailing_list}>
       <h2>Join Our Mailing List</h2>
+      <p>Keep up to date with all current events and newest stock at Cultivation Corner</p>
       <form action="" className={styles.mailingList_form}>
         <input type="Email" 
             value=''
