@@ -9,11 +9,11 @@ const Footer = () => {
     <div className={styles.quick_links}>
       <h2>Quick Links</h2>
       <ul>
-        <NavLink className={styles.reg_links} to="/">Home</NavLink>
-        <NavLink className={styles.reg_links} to="/AboutUs">About Us</NavLink>
-        <NavLink className={styles.reg_links} to="/Shop">Shop</NavLink>
-        <NavLink className={styles.reg_links} to="/Services">Services</NavLink>
-        <NavLink className={styles.reg_links} to="/Blogs">Blog</NavLink>
+        <li><NavLink className={styles.reg_links} to="/">Home</NavLink></li>
+        <li><NavLink className={styles.reg_links} to="/AboutUs">About Us</NavLink></li>
+        <li><NavLink className={styles.reg_links} to="/Shop">Shop</NavLink></li>
+        <li><NavLink className={styles.reg_links} to="/Services">Services</NavLink></li>
+        <li><NavLink className={styles.reg_links} to="/Blogs">Blog</NavLink></li>
       </ul>
       {/* <div className={styles.store_policies}>Store Policies</div> */}
     </div>
