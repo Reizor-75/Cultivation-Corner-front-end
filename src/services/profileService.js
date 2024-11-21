@@ -60,9 +60,21 @@ async function updateRole(formData, memberId){
   }
 }
 
+async function showProfile(profileId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${profileId}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 export { 
   getAllProfiles, 
   addPhoto,
   getEmployeeProfiles,
-  updateRole
+  updateRole,
+  showProfile
 }
