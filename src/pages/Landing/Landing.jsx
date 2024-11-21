@@ -3,8 +3,7 @@ import styles from './Landing.module.css'
 
 const Landing = () => {
   return (
-    <main className={styles.container}>
-
+    <main className={styles.main_container}>
       <div className={styles.landing_container}>
         <div className={styles.image_container}>
           <img src="" alt="slideshow of Plant Shop" />
