@@ -2,10 +2,10 @@
 // css
 import styles from './ProfileDetails.module.css'
 
-const ProfileDetails = ({profile}) => {
+const ProfileDetails = () => {
   return (
     <main className={styles.main_container}>
-      {profile.name}
+      <h1>test</h1>
     </main>
   );
 }

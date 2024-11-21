@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
 
 import AboutUs from './pages/AboutUs/AboutUs'
 import Shop from './pages/Shop/Shop'
@@ -73,6 +74,12 @@ function App() {
             <ProtectedRoute user={user}>
               <Profiles user={user}/>
             </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profiles/:profileId"
+          element={
+            <ProfileDetails/>
           }
         />
         <Route
