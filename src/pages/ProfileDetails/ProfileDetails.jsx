@@ -1,6 +1,6 @@
 // npm modules
 import { useState, useEffect } from 'react';
-import { useParams, NavLink } from 'react-router-dom';
+import { useParams, NavLink, Link } from 'react-router-dom';
 
 // services
 import * as profileServices from "../../services/profileService"
@@ -34,7 +34,8 @@ const ProfileDetails = ({user}) => {
             </div>
             {user?.profile === profileId &&
               <div className={styles.user_buttons}>
-                <NavLink to="/"><button className={styles.user_button}>Update Profile</button></NavLink>
+                <Link to={`/profiles/edit/${user.profile}`}
+                state={profile}><button className={styles.user_button}>Update Profile</button></Link>
                 <NavLink to='/auth/change-password'><button className={styles.user_button}>Change Password</button></NavLink>
               </div>
             }

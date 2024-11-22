@@ -37,7 +37,7 @@ select.input{
   max-height: 7.5ex;
 }
 
-textarea{
+textarea.content{
   width: 100%;
   height: 200px;
   border-radius: 8px;

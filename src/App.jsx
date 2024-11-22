@@ -9,6 +9,8 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
+import EditProfile from './pages/EditProfile/EditProfile'
+
 
 import AboutUs from './pages/AboutUs/AboutUs'
 import Shop from './pages/Shop/Shop'
@@ -80,6 +82,12 @@ function App() {
           path="/profiles/:profileId"
           element={
             <ProfileDetails user={user}/>
+          }
+        />
+        <Route
+          path="/profiles/edit/:profileId"
+          element={
+            <EditProfile user={user}/>
           }
         />
         <Route

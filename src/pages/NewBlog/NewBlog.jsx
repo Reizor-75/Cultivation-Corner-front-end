@@ -82,6 +82,7 @@ const NewBlog = ({user}) => {
             value={content}
             name="content"
             placeholder='Fill in'
+            className={styles.content}
             onChange={handleChange}
             required
           />
