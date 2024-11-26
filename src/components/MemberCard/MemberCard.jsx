@@ -8,7 +8,7 @@ import defaultMember from '../../assets/DefaultMember.jpg'
 
 const MemberCard = ({user, member, handleUpdateRole}) => {
   const [formData, setFormData] = useState({
-    role:''
+    role: member.role
   })
 
   const handleChange = evt => {
@@ -34,42 +34,48 @@ const MemberCard = ({user, member, handleUpdateRole}) => {
       <div className={styles.staff_mem_info}>
         <div className={styles.staff_mem_name}>{member.name ? member.name : `name` }: {formatRole()}</div>
         {user?.role === 900  ?
-          user._id === member._id &&
-          <form autoComplete="off" onSubmit={handleSubmit} className=''>
-            <div className={styles.role_form}>
-              <label htmlFor="100">
-                Customer
-                <input
-                  required 
-                  type="radio"          
-                  className={styles.role_number}
-                  name="role"
-                  value= "100" 
-                  onChange={handleChange}/>
-                  
-              </label> 
-              <label htmlFor="500">
-                Employee
-                <input
-                  required 
-                  type="radio"          
-                  className={styles.role_number}
-                  name="role"
-                  value= "500" 
-                  onChange={handleChange}/>
-              </label> 
-              <label htmlFor="900">Owner
-                <input              
-                  required 
-                  type="radio"          
-                  className={styles.role_number}
-                  name="role"
-                  value= "900" 
-                  onChange={handleChange}/>
-              </label> 
-            </div>
-            <button> update role </button>
-          </form>
+          <>
+            {user.profile !== member._id &&
+              <form autoComplete="off" onSubmit={handleSubmit} className=''>
+                <div className={styles.role_form}>
+                  <label htmlFor="100">
+                    Customer
+                    <input
+                      required 
+                      type="radio"          
+                      className={styles.role_number}
+                      name="role"
+                      value= "100" 
+                      // checked={formData.role === 100}
+                      onChange={handleChange}/>
+                      
+                  </label> 
+                  <label htmlFor="500">
+                    Employee
+                    <input
+                      required 
+                      type="radio"          
+                      className={styles.role_number}
+                      name="role"
+                      value= "500" 
+                      // checked={formData.role === 500}
+                      onChange={handleChange}/>
+                  </label> 
+                  <label htmlFor="900">Owner
+                    <input              
+                      required 
+                      type="radio"          
+                      className={styles.role_number}
+                      name="role"
+                      value= "900" 
+                      // checked={formData.role === 900}
+                      onChange={handleChange}/>
+                  </label> 
+                </div>
+                <button className={styles.update_role}>Update Role</button>
+              </form>
+            }
+          </>
           :          
           <div className={styles.staff_mem_bio}>{member.aboutMe ? member.aboutMe: "About Me"}</div>
         }

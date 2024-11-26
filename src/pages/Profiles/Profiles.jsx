@@ -17,8 +17,8 @@ const Profiles = ({user}) => {
   const [profiles, setProfiles] = useState([])
 
   const handleUpdateRole = async(formData, memberId) =>{
-    await profileService.updateRole(formData, memberId)
-    
+    const newEmployee = await profileService.updateRole(formData, memberId)
+    setProfiles(profiles.map(profile => profile._id === newEmployee._id ? newEmployee : profile))
   }
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Profiles = ({user}) => {
     fetchProfiles()
   }, [])
 
-  if(user.role != 900){
+  if(user.role < 900){
     navigate('/')
   }
   

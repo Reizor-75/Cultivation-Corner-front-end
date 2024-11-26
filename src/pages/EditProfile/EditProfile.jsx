@@ -1,6 +1,6 @@
 // npm module
 import { useState } from "react"
-import { useLocation, Link, useNavigate, useResolvedPath } from "react-router-dom"
+import { useLocation, Link, useNavigate } from "react-router-dom"
 
 // services
 import * as profileServices from "../../services/profileService"
@@ -20,6 +20,7 @@ const EditProfile = ({user}) => {
 
   const handleSubmit = async evt => {
     evt.preventDefault()
+    await profileServices.update(formData)
     navigate(`/profiles/${state._id}`)
   }
 
