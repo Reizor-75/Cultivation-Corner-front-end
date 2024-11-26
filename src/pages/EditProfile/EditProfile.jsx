@@ -20,7 +20,7 @@ const EditProfile = ({user}) => {
 
   const handleSubmit = async evt => {
     evt.preventDefault()
-    await profileServices.update(formData)
+    await profileServices.updateProfile(formData)
     navigate(`/profiles/${state._id}`)
   }
 
@@ -46,14 +46,16 @@ const EditProfile = ({user}) => {
           placeholder="Mailing Address"
           onChange={handleChange} />
         </label>
-        <label className={styles.label}>
+        {formData.role >= 500 && 
+          <label className={styles.label}>
           About Me
           <textarea  
           value={formData.aboutMe} name="aboutMe"
           placeholder="Write a bit about yourself!"
           className={styles.aboutMe}
           onChange={handleChange} />  
-        </label>
+          </label>
+        }
         <Link to="/">Cancel</Link>
         <button className={styles.submit_button}>Save Changes</button>
       </form>

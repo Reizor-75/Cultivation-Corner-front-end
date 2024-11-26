@@ -44,11 +44,13 @@ const ProfileDetails = ({user}) => {
             <div className={`${styles.address} ${styles.sub_header}`}>Address</div>
             <div className={styles.profile_address}>{profile.address ? profile.address: "No Saved Address "}</div>
           </div>
-          <div className={`${styles.aboutMe} ${styles.sub_container}`}>
+          {profile.role >=500 &&
+            <div className={`${styles.aboutMe} ${styles.sub_container}`}>
             <div className={styles.sub_header}>   About Me</div>            
             {profile.aboutMe}  
             test
-          </div>
+            </div>
+          }
           <div className={`${styles.orders} ${styles.sub_container}`}>
             <div className={styles.sub_header}>   Orders</div>
             <div>{profile.orders.length !=0 ? "my Orders" : "No Orders placed"}            </div>
