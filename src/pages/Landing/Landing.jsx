@@ -1,13 +1,18 @@
+//component
+import Carousel from '../../components/Carousel/Carousel'
+
 // css
 import styles from './Landing.module.css'
+
 
 const Landing = () => {
   return (
     <main className={styles.main_container}>
       <div className={styles.landing_container}>
-        <div className={styles.image_container}>
-          <img src="" alt="slideshow of Plant Shop" />
-        </div>
+        {/* <div className={styles.image_container}>
+          <img src="" alt="Slideshow of Plant Shop" />
+        </div> */}
+        <Carousel></Carousel>
         <div className={styles.shop_details}>
           <div className={styles.map}>Map</div>
           <div className={styles.shop_info}>

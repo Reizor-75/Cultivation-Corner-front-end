@@ -4,7 +4,7 @@
   width: 100%; 
   min-width: fit-content; 
   background-color: var(--main-color);
-  margin-top: 72px;
+  margin-top: 0;
   padding-bottom: 24px;
   color: var(--background-color);
   position: relative;
@@ -92,10 +92,9 @@
   .footer_container{
     display: flex;
     flex-direction: column-reverse;
-    padding: 0 24px;
-    margin-top: 72px;
     font-size: var(--font-xs);
     width: 100%;
+    padding-left: 48px;
     div{
       margin: 0;
       padding: 12px 6px;
