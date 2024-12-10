@@ -1,5 +1,6 @@
 .carousel_container{
-  width: 600px;
+  width: 100vw;
+  height: 80vh;
   overflow: hidden;
   position: relative;
 }
@@ -11,7 +12,8 @@
 
 .slide{
   display: inline-block;
-  height: 400px;
+  object-fit: cover;
+  height: 85vh;
   width: 100%;
 }
 

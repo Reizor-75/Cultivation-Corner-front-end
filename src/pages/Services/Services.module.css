@@ -1,6 +1,6 @@
 .services_container{
-  width: 60vw;
-  min-width: 800px;  
+  width: 65vw;
+  /* min-width: 800px;   */
   font-family: var(--font-text);
   letter-spacing: .01rem;
   margin-top: 24px;
@@ -9,4 +9,11 @@
 
 .header{
   font-family: var(--font-header);
+}
+
+
+@media screen and (max-width: 800px){
+  .services_container{
+    width: 85vw;
+  }
 }
